@@ -1,4 +1,202 @@
-/* Вотсап */
+/* Слайд 1 */
+
+width: 1920px;
+height: 1000px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+z-index: 0;
+
+/* Слайд 1 1 */
+
+position: absolute;
+width: 1920px;
+height: 1000px;
+left: calc(50% - 1920px / 2);
+top: 0px;
+
+background: url(Слайд 2.png);
+
+/* Затемнение сверху */
+
+position: absolute;
+width: 1920px;
+height: 310px;
+left: 0px;
+top: 0px;
+
+background: linear-gradient(180deg, rgba(11, 27, 35, 0.8) 0%, rgba(11, 27, 35, 0) 100%);
+
+/* Текст на слайде */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 0px;
+gap: 100px;
+
+position: absolute;
+width: 971px;
+height: 795px;
+left: 240px;
+top: 205px;
+
+/* Frame 41 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 50px;
+
+width: 971px;
+height: 426px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+/* Выездное ресторанное обслуживание */
+
+width: 971px;
+height: 282px;
+
+font-family: "Raleway";
+font-style: normal;
+font-weight: 400;
+font-size: 80px;
+line-height: 94px;
+
+color: #ffffff;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+/* для событий любого масштаба  при любых условиях */
+
+width: 971px;
+height: 94px;
+
+font-family: "Raleway";
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 47px;
+
+color: #ffffff;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+/* Кнопка синяя 1 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 20px 30px;
+isolation: isolate;
+
+width: 232px;
+height: 70px;
+
+background: #2cb4fe;
+border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+/* Ellipse 1 */
+
+position: absolute;
+width: 30px;
+height: 30px;
+left: 57px;
+top: 83px;
+
+background: #ffffff;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+z-index: 0;
+
+/* Узнать больше 1 */
+
+width: 172px;
+height: 30px;
+
+font-family: "Mplus 1p";
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 30px;
+/* identical to box height */
+text-transform: uppercase;
+
+color: #ffffff;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+z-index: 1;
+
+/* Frame 252 */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0px;
+gap: 20px;
+
+position: absolute;
+width: 207px;
+height: 64px;
+left: 1473px;
+top: 837px;
+
+/* 1/3 */
+
+width: 39px;
+height: 29px;
+
+font-family: "Raleway";
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 29px;
+text-transform: uppercase;
+
+color: #ffffff;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+/* Кнопка прозрачная 4 */
+
+box-sizing: border-box;
 
 /* Auto layout */
 display: flex;
@@ -8,14 +206,83 @@ align-items: center;
 padding: 20px;
 gap: 10px;
 
-width: 40px;
-height: 40px;
+width: 64px;
+height: 64px;
 
-background: #0b1b23;
-box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+background: rgba(255, 255, 255, 0.2);
+border: 1px solid rgba(255, 255, 255, 0.2);
 border-radius: 5px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+/* chevron-left 1 */
+
+width: 24px;
+height: 24px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+/* Icon */
+
+position: absolute;
+left: 62.5%;
+right: -20.83%;
+top: 20.83%;
+bottom: 45.83%;
+
+background: #ffffff;
+transform: rotate(90deg);
+
+/* Кнопка прозрачная 3 */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 20px;
+gap: 10px;
+
+width: 64px;
+height: 64px;
+
+background: rgba(255, 255, 255, 0.2);
+border: 1px solid rgba(255, 255, 255, 0.2);
+border-radius: 5px;
+transform: matrix(-1, 0, 0, 1, 0, 0);
 
 /* Inside auto layout */
 flex: none;
 order: 2;
 flex-grow: 0;
+
+/* chevron-left 1 */
+
+width: 24px;
+height: 24px;
+
+transform: matrix(-1, 0, 0, 1, 0, 0);
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+/* Icon */
+
+position: absolute;
+left: 37.5%;
+right: 4.17%;
+top: 20.83%;
+bottom: 45.83%;
+
+background: #ffffff;
+transform: matrix(0, 1, 1, 0, 0, 0);

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,7 @@
     <title>Document</title>
   </head>
   <body>
+    <!-- Header -->
     <header class="header">
       <div class="container">
         <div class="content">
@@ -53,14 +54,90 @@
               </div>
             </div>
           </div>
+
+          <nav class="nav-header">
+            <ul class="nav-header__list">
+              <li><a class="nav-header__list-item" href="#">О компании</a></li>
+              <li><a class="nav-header__list-item" href="#">Услуги</a></li>
+              <li><a class="nav-header__list-item" href="#">Новости</a></li>
+              <li><a class="nav-header__list-item" href="#">Прайс</a></li>
+              <li><a class="nav-header__list-item" href="#">Портфолио</a></li>
+              <li><a class="nav-header__list-item" href="#">Контакты</a></li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
 
-    <!-- Основной контент -->
-    <main></main>
+    <!-- Main content -->
+    <main>
+      <section>
+        <div class="container">
+          <div class="bg-img">
+            <img src="./assets/images/slide-1.png" alt="" />
+            <div class="text-main__slide">section1</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="content">section2</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="content">section3</div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="content">
+          <div class="top-header">
+            <div class="left">
+              <a class="logo" href="#">
+                <div class="logo-img">
+                  <p class="logo-img__text">vm</p>
+                </div>
+                <div class="logo-text">
+                  <p class="logo-text__title">Viatek media</p>
+                  <p class="logo-text__subtitle">Кейтеринговая компания</p>
+                </div>
+              </a>
+
+              <div class="line"></div>
+
+              <div class="address">
+                <p>г. Старый Оскол, м-н Юбилейный, д.33, корпус 3, офис 224</p>
+              </div>
+            </div>
+
+            <div class="right">
+              <div class="phone">
+                <p>+7 (996) 886-85-36</p>
+                <img class="phone__arrow" src="./assets/images/chevron-down-small.png" />
+              </div>
+
+              <div class="socials">
+                <a class="socials__link" href="#"
+                  ><img class="socials__icon" src="./assets/images/wa.png" alt="Whatsapp icon"
+                /></a>
+                <a class="socials__link" href="#"
+                  ><img class="socials__icon" src="./assets/images/tg.png" alt="Telegramm icon"
+                /></a>
+                <a class="socials__link" href="#"
+                  ><img class="socials__icon" src="./assets/images/vk.png" alt="VK icon"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="./assets/js/index.js"></script>
   </body>
