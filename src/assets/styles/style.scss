@@ -1,0 +1,349 @@
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/Raleway-ExtraLight.ttf) format("truetype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/Raleway-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/Raleway-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/Raleway-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../fonts/Raleway-Black.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mplus 1p";
+  src: url(../fonts/MPLUS1p-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mplus 1p";
+  src: url(../fonts/MPLUS1p-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 0.1s ease;
+}
+
+:root {
+  --main-text-color: #ffffff;
+  --secondary-text-color: #112630;
+  --main-bg-color: #0b1b23;
+  --secondary-color: #2cb4fe;
+  --primary-color: #9747ff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+}
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: relative;
+  transition: 0.1s ease;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+
+.content {
+  max-width: calc(1440px + 20px * 2);
+  margin: 0 auto;
+  width: 100%;
+  padding: 50px 20px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+
+  color: var(--main-text-color);
+  text-transform: uppercase;
+
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-bg-color);
+    z-index: -2;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: -20px;
+    width: 200px;
+    height: 0;
+    border-radius: 50%;
+
+    background-color: var(--secondary-color);
+    transition: all 0.5s;
+    z-index: -1;
+  }
+  &:hover {
+    color: var(--main-text-color);
+    &:before {
+      height: 200px;
+    }
+  }
+}
+
+// HEADER-------------------------------------------------------------
+
+header {
+  .top-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    height: 60px;
+
+    .left {
+      display: flex;
+      width: 630px;
+      height: 60px;
+      gap: 20px;
+
+      .logo {
+        display: flex;
+        align-items: center;
+        padding: 0px;
+        margin: 0px;
+        gap: 20px;
+        cursor: pointer;
+
+        width: 289px;
+        height: 60px;
+        .logo-img {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 0px;
+          gap: 10px;
+
+          width: 60px;
+          height: 60px;
+
+          background: var(--secondary-color);
+          border-radius: 50%;
+          .logo-img__text {
+            font-weight: 900;
+            font-size: 28px;
+            text-transform: uppercase;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        .logo-text {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0px;
+
+          width: 209px;
+          height: 52px;
+
+          .logo-text__title {
+            width: 209px;
+            height: 32px;
+
+            font-style: normal;
+
+            font-weight: 800;
+            font-size: 30px;
+            white-space: nowrap;
+            line-height: 100%;
+            text-transform: uppercase;
+          }
+
+          .logo-text__subtitle {
+            width: 209px;
+            height: 20px;
+
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 100%;
+          }
+        }
+      }
+
+      .line {
+        width: 0px;
+        height: 60px;
+
+        opacity: 0.5;
+        border: 1px solid var(--main-text-color);
+      }
+
+      .address {
+        width: 301px;
+        height: 44px;
+        p {
+          font-family: "Mplus 1p";
+          font-weight: 400;
+          font-size: 15px;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      align-items: center;
+      padding: 0px;
+      gap: 20px;
+
+      width: 642px;
+      height: 40px;
+
+      .phone {
+        position: relative;
+        display: flex;
+        width: 231px;
+        height: 40px;
+        p {
+          display: flex;
+
+          font-family: "Mplus 1p";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          align-items: center;
+        }
+
+        .phone__arrow {
+          width: 24px;
+          height: 24px;
+          cursor: pointer;
+
+          position: absolute;
+          top: 8px;
+          right: 0px;
+        }
+      }
+
+      .button-wrapper {
+        width: 151px;
+        height: 38px;
+        border-radius: 5px;
+      }
+
+      .socials {
+        display: flex;
+        gap: 20px;
+
+        .socials__link {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          position: relative;
+
+          .socials__icon {
+            position: absolute;
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+}
