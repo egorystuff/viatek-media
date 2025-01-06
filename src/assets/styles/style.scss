@@ -138,7 +138,7 @@ body {
   color: var(--main-text-color);
 }
 
-.container_transparent {
+.container__transparent {
   max-width: 1920px;
   margin: 0 auto;
   background-color: transparent;
@@ -206,7 +206,7 @@ body {
 
 // HEADER-------------------------------------------------------------
 
-.header-absolute {
+.header__absolute {
   position: absolute;
   top: 0;
   left: 0;
@@ -216,7 +216,7 @@ body {
   opacity: 100%;
 }
 
-.top-header {
+.top__header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -408,6 +408,7 @@ body {
 //SLIDE-------------------------------------------------------------
 
 .bg-img__slide {
+  position: relative;
   max-width: 1920px;
   max-height: 1000px;
   margin: 0 auto;
@@ -425,6 +426,7 @@ body {
   height: 795px;
 
   .text-main__slide-title {
+    display: flex;
     margin-top: 100px;
 
     font-family: "Raleway";
@@ -432,6 +434,8 @@ body {
     font-weight: 400;
     font-size: 80px;
     line-height: 94px;
+
+    color: var(--main-text-color);
   }
 
   .text-main__slide-subtitle {
@@ -442,9 +446,11 @@ body {
     font-weight: 400;
     font-size: 40px;
     line-height: 47px;
+
+    color: var(--main-text-color);
   }
 
-  .button-slide {
+  .button__slide {
     margin-top: 100px;
     width: 232px;
     height: 70px;
@@ -493,6 +499,83 @@ body {
     font-size: 60px;
     line-height: 70px;
     max-width: 984px;
+  }
+}
+
+//SERVICES-------------------------------------------------------------
+
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px;
+
+  max-width: 1440px;
+  height: 100%;
+
+  .services__block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px;
+    gap: 50px;
+
+    max-width: 1440px;
+    width: 100%;
+    height: 300px;
+
+    .services__block-item {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      box-shadow: 0px 15px 34.1px -22px rgba(0, 0, 0, 0.6);
+      border-radius: 5px;
+
+      .services__block-item-img {
+        display: flex;
+        overflow: hidden;
+        width: 322px;
+        height: 300px;
+        border-radius: 5px;
+
+        img {
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+      .services__block-item-text {
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 30px;
+        gap: 30px;
+
+        width: 322px;
+        .services__block-item-text-number {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 50px;
+          line-height: 50%;
+        }
+        .services__block-item-text-title {
+          font-family: "Mplus 1p";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 25px;
+          line-height: 37px;
+        }
+      }
+    }
+  }
+
+  .services__nav {
   }
 }
 
