@@ -131,6 +131,13 @@ body {
   color: var(--main-text-color);
 }
 
+.container_transparent {
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: transparent;
+  color: var(--main-text-color);
+}
+
 .content {
   max-width: 1480px;
   margin: 0 auto;
@@ -138,55 +145,14 @@ body {
   padding: 50px 20px;
 }
 
-.button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Mplus 1p";
-  font-weight: 800;
-  font-size: 12px;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
-  color: var(--main-text-color);
-  text-transform: uppercase;
-  transition: all 0.5s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.button:after {
-  content: "";
+.header-absolute {
   position: absolute;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  background-color: var(--main-bg-color);
-  z-index: -2;
-}
-.button:before {
-  content: "";
-  position: absolute;
-  bottom: -50px;
-  left: -20px;
-  width: 200px;
-  height: 0;
-  border-radius: 50%;
-  background-color: var(--secondary-color);
-  transition: all 0.5s;
-  z-index: -1;
-}
-.button:hover {
-  color: var(--main-text-color);
-}
-.button:hover:before {
-  height: 200px;
-}
-
-header {
-  border-bottom: 1px solid #122d3b;
+  z-index: 100;
+  background-color: none;
+  opacity: 100%;
 }
 
 .top-header {
@@ -199,7 +165,7 @@ header {
 }
 .top-header .left {
   display: flex;
-  width: 630px;
+  max-width: 630px;
   height: 60px;
   gap: 20px;
 }
@@ -210,7 +176,7 @@ header {
   margin: 0px;
   gap: 20px;
   cursor: pointer;
-  width: 289px;
+  max-width: 289px;
   height: 60px;
 }
 .top-header .left .logo .logo-img {
@@ -237,11 +203,11 @@ header {
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
-  width: 209px;
+  max-width: 209px;
   height: 52px;
 }
 .top-header .left .logo .logo-text .logo-text__title {
-  width: 209px;
+  max-width: 209px;
   height: 32px;
   font-style: normal;
   font-weight: 800;
@@ -251,7 +217,7 @@ header {
   text-transform: uppercase;
 }
 .top-header .left .logo .logo-text .logo-text__subtitle {
-  width: 209px;
+  max-width: 209px;
   height: 20px;
   font-weight: 400;
   font-size: 17px;
@@ -264,7 +230,7 @@ header {
   border: 1px solid var(--main-text-color);
 }
 .top-header .left .address {
-  width: 301px;
+  max-width: 301px;
   height: 44px;
 }
 .top-header .left .address p {
@@ -277,7 +243,7 @@ header {
   align-items: center;
   padding: 0px;
   gap: 20px;
-  width: 642px;
+  max-width: 642px;
   height: 40px;
 }
 .top-header .right .phone {
@@ -307,6 +273,54 @@ header {
   height: 38px;
   border-radius: 5px;
 }
+.top-header .right .button-wrapper .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.top-header .right .button-wrapper .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  z-index: -2;
+}
+.top-header .right .button-wrapper .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.top-header .right .button-wrapper .button:hover {
+  color: var(--main-text-color);
+}
+.top-header .right .button-wrapper .button:hover:before {
+  height: 250px;
+  width: 250px;
+}
 .top-header .right .socials {
   display: flex;
   gap: 20px;
@@ -318,8 +332,8 @@ header {
   position: relative;
 }
 .top-header .right .socials .socials__link .socials__icon {
-  position: absolute;
   top: 2px;
+  position: absolute;
 }
 
 .nav-header {
@@ -347,17 +361,126 @@ header {
   text-transform: uppercase;
 }
 
-.bg-img {
+.bg-img__slide {
   max-width: 1920px;
+  max-height: 1000px;
   margin: 0 auto;
   width: 100%;
-  position: relative;
-}
-.bg-img .text-main__slide {
-  position: absolute;
-  top: 0;
+  height: 100%;
 }
 
-footer {
+.text-main__slide {
+  position: absolute;
+  top: 205px;
+  left: 50%;
+  transform: translate(-49%);
+  max-width: 1480px;
+  width: 100%;
+  height: 795px;
+}
+.text-main__slide .text-main__slide-title {
+  margin-top: 100px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 94px;
+}
+.text-main__slide .text-main__slide-subtitle {
+  margin-top: 50px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47px;
+}
+.text-main__slide .button-slide {
+  margin-top: 100px;
+  width: 232px;
+  height: 70px;
+  border-radius: 5px;
+}
+.text-main__slide .button-slide .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.text-main__slide .button-slide .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  z-index: -2;
+}
+.text-main__slide .button-slide .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.text-main__slide .button-slide .button:hover {
+  color: var(--main-text-color);
+}
+.text-main__slide .button-slide .button:hover:before {
+  height: 300px;
+  width: 300px;
+}
+
+.title .title__subtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  margin-bottom: 50px;
+  max-width: 1440px;
+  height: 18px;
+}
+.title .title__subtitle .title__line {
+  width: 50px;
+  height: 0px;
+  border: 1px solid var(--secondary-color);
+}
+.title .title__subtitle .title__subtitle-text {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: var(--secondary-color);
+}
+.title .title__text {
+  font-family: "Raleway";
+  font-weight: 200;
+  font-size: 60px;
+  line-height: 70px;
+  max-width: 984px;
+}
+
+.footer-line__top {
   border-top: 1px solid #122d3b;
 }/*# sourceMappingURL=style.css.map */
