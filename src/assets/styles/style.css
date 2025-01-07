@@ -498,6 +498,7 @@ body {
   gap: 50px;
   max-width: 1440px;
   height: 100%;
+  margin-bottom: 50px;
 }
 .services .services__block {
   display: flex;
@@ -738,8 +739,7 @@ body {
 }
 .about .about__block .about__block-text {
   margin-top: 50px;
-  width: 695px;
-  height: 420px;
+  max-width: 695px;
 }
 .about .about__block .about__block-text p {
   font-family: "Mplus 1p";
@@ -781,7 +781,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--main-bg-color);
+  background-color: var(--secondary-text-color);
   z-index: -2;
 }
 .about .about__block .about__block-button .button:before {
@@ -811,6 +811,212 @@ body {
   font-size: 20px;
   line-height: 30px;
   text-transform: none;
+}
+
+.price__block .price__block-title {
+  height: 70px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 60px;
+  line-height: 70px;
+  margin: 50px 0;
+}
+.price__block .price__block-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+  max-width: 1440px;
+  max-height: 648px;
+}
+.price__block .price__block-list .price__block-item {
+  display: flex;
+  padding: 20px 30px;
+  gap: 10px;
+  max-width: 1440px;
+  width: 100%;
+  height: 84px;
+  background: var(--secondary-text-color);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.price__block .price__block-list .price__block-item .price__block-item-text {
+  display: flex;
+  height: 44px;
+  width: 73%;
+  color: var(--secondary-color);
+}
+.price__block .price__block-list .price__block-item .price__block-item-text p {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 27%;
+  justify-content: space-between;
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper .item-price {
+  width: 179px;
+  height: 30px;
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper .item-button {
+  display: flex;
+  width: 116px;
+  height: 44px;
+  border-radius: 5px;
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper .item-button .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper .item-button .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  z-index: -2;
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper .item-button .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--main-text-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper .item-button .button:hover {
+  color: var(--main-bg-color);
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper .item-button .button:hover:before {
+  height: 250px;
+  width: 250px;
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper .item-button p {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.price__block .price__block-list .price__block-item .price__block-item-wrapper .item-icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px 10px 10px 20px;
+  width: 24px;
+  height: 24px;
+}
+.price__block [id^=id-item_]:hover {
+  background: var(--secondary-color);
+}
+.price__block [id^=id-item_]:hover .price__block-item-text {
+  color: var(--main-text-color);
+}
+.price__block .price__block-button {
+  display: flex;
+  margin-top: 50px;
+  max-width: 1440px;
+  height: 62px;
+  border-radius: 5px;
+}
+.price__block .price__block-button .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.price__block .price__block-button .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  z-index: -2;
+}
+.price__block .price__block-button .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--main-bg-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.price__block .price__block-button .button:hover {
+  color: var(--secondary-color);
+}
+.price__block .price__block-button .button:hover:before {
+  height: 250px;
+  width: 250px;
+}
+.price__block .price__block-button p {
+  display: flex;
+  width: 139px;
+  height: 22px;
+  text-align: center;
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  text-transform: uppercase;
 }
 
 .footer-line__top {
