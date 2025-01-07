@@ -430,7 +430,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--main-bg-color);
+  background-color: var(--secondary-color);
   z-index: -2;
 }
 .text-main__slide .button__slide .button:before {
@@ -441,16 +441,22 @@ body {
   width: 0px;
   height: 0;
   border-radius: 50%;
-  background-color: var(--secondary-color);
+  background-color: var(--main-text-color);
   transition: all 0.5s;
   z-index: -1;
 }
 .text-main__slide .button__slide .button:hover {
-  color: var(--main-text-color);
+  color: var(--secondary-color);
 }
 .text-main__slide .button__slide .button:hover:before {
   height: 300px;
   width: 300px;
+}
+.text-main__slide .button__slide .button p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
 }
 
 .title .title__subtitle {
@@ -549,6 +555,264 @@ body {
   font-size: 25px;
   line-height: 37px;
 }
+.services .services__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+  width: 364px;
+  height: 44px;
+}
+.services .services__nav .services__button-left {
+  position: relative;
+  display: flex;
+  width: 168px;
+  height: 44px;
+  border-radius: 5px;
+}
+.services .services__nav .services__button-left .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.services .services__nav .services__button-left .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-text-color);
+  z-index: -2;
+}
+.services .services__nav .services__button-left .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.services .services__nav .services__button-left .button:hover {
+  color: var(--main-text-color);
+}
+.services .services__nav .services__button-left .button:hover:before {
+  height: 250px;
+  width: 250px;
+}
+.services .services__nav .services__button-left .button p {
+  position: absolute;
+  left: 20px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+.services .services__nav .services__button-left .services__button-left-icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: 50%;
+  right: 23px;
+  transform: translate(0, -50%);
+  z-index: 1;
+}
+.services .services__nav .services__button-left .services__button-left-icon svg {
+  fill: var(--secondary-color);
+}
+.services .services__nav :hover .services__button-left-icon svg {
+  fill: var(--main-text-color);
+}
+.services .services__nav .services__button-right {
+  display: flex;
+  width: 176px;
+  height: 44px;
+  border-radius: 5px;
+}
+.services .services__nav .services__button-right .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.services .services__nav .services__button-right .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  z-index: -2;
+}
+.services .services__nav .services__button-right .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--main-text-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.services .services__nav .services__button-right .button:hover {
+  color: var(--main-bg-color);
+}
+.services .services__nav .services__button-right .button:hover:before {
+  height: 250px;
+  width: 250px;
+}
+.services .services__nav .services__button-right .button p {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+.about {
+  position: relative;
+  height: 860px;
+  background: var(--secondary-text-color);
+}
+.about .about__bg {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+}
+.about .about__bg img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.about .about__block {
+  width: 100%;
+  height: 100%;
+}
+.about .about__block .about__block-title {
+  height: 70px;
+  margin-top: 50px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 250;
+  font-size: 60px;
+  line-height: 70px;
+}
+.about .about__block .about__block-text {
+  margin-top: 50px;
+  width: 695px;
+  height: 420px;
+}
+.about .about__block .about__block-text p {
+  font-family: "Mplus 1p";
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.about .about__block .about__block-button {
+  display: flex;
+  margin-top: 50px;
+  width: 169px;
+  height: 70px;
+  border-radius: 5px;
+}
+.about .about__block .about__block-button .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.about .about__block .about__block-button .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  z-index: -2;
+}
+.about .about__block .about__block-button .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.about .about__block .about__block-button .button:hover {
+  color: var(--main-text-color);
+}
+.about .about__block .about__block-button .button:hover:before {
+  height: 250px;
+  width: 250px;
+}
+.about .about__block .about__block-button p {
+  padding: 20px 30px;
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: none;
+}
+
 .footer-line__top {
   border-top: 1px solid #122d3b;
 }/*# sourceMappingURL=style.css.map */

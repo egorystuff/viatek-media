@@ -152,7 +152,13 @@ body {
   padding: 50px 20px;
 }
 
-@mixin base_button($property) {
+@mixin base_button(
+  $pos,
+  $color: var(--main-text-color),
+  $main-bg-color: var(--main-bg-color),
+  $bg-color: var(--secondary-color),
+  $secondary-text-color: var(--main-text-color)
+) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -165,7 +171,7 @@ body {
   box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
   cursor: pointer;
 
-  color: var(--main-text-color);
+  color: $color;
   text-transform: uppercase;
 
   transition: all 0.5s;
@@ -179,7 +185,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--main-bg-color);
+    background-color: $main-bg-color;
     z-index: -2;
   }
   &:before {
@@ -190,20 +196,20 @@ body {
     width: 0px;
     height: 0;
     border-radius: 50%;
-
-    background-color: var(--secondary-color);
+    background-color: $bg-color;
     transition: all 0.5s;
     z-index: -1;
   }
   &:hover {
-    color: var(--main-text-color);
+    color: $secondary-text-color;
     &:before {
-      height: $property;
-      width: $property;
+      height: $pos;
+      width: $pos;
     }
   }
 }
 
+// MAIN-PAGE------------------------------------------------------------
 // HEADER-------------------------------------------------------------
 
 .header__absolute {
@@ -405,7 +411,7 @@ body {
   }
 }
 
-//SLIDE-------------------------------------------------------------
+// SLIDE-------------------------------------------------------------
 
 .bg-img__slide {
   position: relative;
@@ -456,12 +462,24 @@ body {
     height: 70px;
     border-radius: 5px;
     .button {
-      @include base_button(300px);
+      @include base_button(
+        300px,
+        var(--main-text-color),
+        var(--secondary-color),
+        var(--main-text-color),
+        var(--secondary-color)
+      );
+      p {
+        font-family: "Mplus 1p";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+      }
     }
   }
 }
 
-//TITLE-------------------------------------------------------------
+// TITLE-------------------------------------------------------------
 
 .title {
   .title__subtitle {
@@ -502,7 +520,7 @@ body {
   }
 }
 
-//SERVICES-------------------------------------------------------------
+// SERVICES-------------------------------------------------------------
 
 .services {
   display: flex;
@@ -576,10 +594,149 @@ body {
   }
 
   .services__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+
+    width: 364px;
+    height: 44px;
+
+    .services__button-left {
+      position: relative;
+      display: flex;
+      width: 168px;
+      height: 44px;
+      border-radius: 5px;
+      .button {
+        @include base_button(250px, var(--secondary-color), var(--secondary-text-color));
+        p {
+          position: absolute;
+          left: 20px;
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 18px;
+          text-transform: uppercase;
+        }
+      }
+
+      .services__button-left-icon {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        top: 50%;
+        right: 23px;
+        transform: translate(0, -50%);
+
+        z-index: 1;
+        svg {
+          fill: var(--secondary-color);
+        }
+      }
+    }
+    :hover .services__button-left-icon svg {
+      fill: var(--main-text-color);
+    }
+
+    .services__button-right {
+      display: flex;
+
+      width: 176px;
+      height: 44px;
+      border-radius: 5px;
+      .button {
+        @include base_button(
+          250px,
+          var(--main-text-color),
+          var(--main-bg-color),
+          var(--main-text-color),
+          var(--main-bg-color)
+        );
+        p {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          line-height: 18px;
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 }
 
-//FOOTER-------------------------------------------------------------
+// ABOUT-------------------------------------------------------------
+.about {
+  position: relative;
+  height: 860px;
+  background: var(--secondary-text-color);
+
+  .about__bg {
+    position: absolute;
+    left: 50%;
+    height: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .about__block {
+    width: 100%;
+    height: 100%;
+
+    .about__block-title {
+      height: 70px;
+      margin-top: 50px;
+
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 250;
+      font-size: 60px;
+      line-height: 70px;
+    }
+
+    .about__block-text {
+      margin-top: 50px;
+      width: 695px;
+      height: 420px;
+
+      p {
+        font-family: "Mplus 1p";
+        font-weight: 400;
+        line-height: 30px;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+    }
+
+    .about__block-button {
+      display: flex;
+      margin-top: 50px;
+      width: 169px;
+      height: 70px;
+      border-radius: 5px;
+      .button {
+        @include base_button(250px);
+      }
+      p {
+        padding: 20px 30px;
+        font-family: "Mplus 1p";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+        text-transform: none;
+      }
+    }
+  }
+}
+
+// FOOTER-------------------------------------------------------------
 .footer-line__top {
   border-top: 1px solid #122d3b;
 }
