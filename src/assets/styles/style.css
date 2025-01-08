@@ -138,6 +138,10 @@ body {
   color: var(--main-text-color);
 }
 
+.container__promo {
+  background-color: #355e75;
+}
+
 .content {
   max-width: 1480px;
   margin: 0 auto;
@@ -566,7 +570,6 @@ body {
   height: 44px;
 }
 .services .services__nav .services__button-left {
-  position: relative;
   display: flex;
   width: 168px;
   height: 44px;
@@ -621,28 +624,14 @@ body {
   width: 250px;
 }
 .services .services__nav .services__button-left .button p {
-  position: absolute;
-  left: 20px;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
-  line-height: 18px;
   text-transform: uppercase;
+  margin-right: 20px;
 }
-.services .services__nav .services__button-left .services__button-left-icon {
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  top: 50%;
-  right: 23px;
-  transform: translate(0, -50%);
-  z-index: 1;
-}
-.services .services__nav .services__button-left .services__button-left-icon svg {
-  fill: var(--secondary-color);
-}
-.services .services__nav :hover .services__button-left-icon svg {
+.services .services__nav :hover > svg {
   fill: var(--main-text-color);
 }
 .services .services__nav .services__button-right {
@@ -704,7 +693,6 @@ body {
   font-style: normal;
   font-weight: 700;
   font-size: 15px;
-  line-height: 18px;
   text-transform: uppercase;
 }
 
@@ -1017,6 +1005,217 @@ body {
   font-size: 15px;
   line-height: 22px;
   text-transform: uppercase;
+}
+
+.portfolio {
+  display: flex;
+  padding: 0px;
+  gap: 30px;
+}
+.portfolio .portfolio__block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.portfolio .portfolio__block .portfolio__block-item {
+  display: flex;
+  overflow: hidden;
+  width: 460px;
+  height: 300px;
+}
+.portfolio .portfolio__block .portfolio__block-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.portfolio .portfolio__block :hover img {
+  scale: 1.1;
+}
+
+.portfolio__button {
+  display: flex;
+  width: 188px;
+  height: 44px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+.portfolio__button .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.portfolio__button .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-text-color);
+  z-index: -2;
+}
+.portfolio__button .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.portfolio__button .button:hover {
+  color: var(--main-text-color);
+}
+.portfolio__button .button:hover:before {
+  height: 250px;
+  width: 250px;
+}
+.portfolio__button .button p {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+:hover > svg {
+  fill: var(--main-text-color);
+}
+
+.promo {
+  display: flex;
+  margin-top: 50px;
+  gap: 50px;
+  max-width: 1440px;
+  height: 590px;
+}
+.promo .promo__block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.promo .promo__block .promo__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 30px;
+  width: 322px;
+  height: 590px;
+}
+.promo .promo__block .promo__item .promo__item-img {
+  overflow: hidden;
+}
+.promo .promo__block .promo__item .promo__item-img img {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.promo .promo__block .promo__item .button__promo {
+  opacity: 0;
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  translate: -50%;
+  margin-top: 100px;
+  width: 194px;
+  height: 44px;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.promo .promo__block .promo__item .button__promo .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.promo .promo__block .promo__item .button__promo .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  z-index: -2;
+}
+.promo .promo__block .promo__item .button__promo .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--main-text-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.promo .promo__block .promo__item .button__promo .button:hover {
+  color: var(--secondary-color);
+}
+.promo .promo__block .promo__item .button__promo .button:hover:before {
+  height: 300px;
+  width: 300px;
+}
+.promo .promo__block .promo__item .button__promo .button p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+}
+.promo .promo__block .promo__item p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+}
+.promo .promo__block :hover img {
+  scale: 1.1;
+  filter: brightness(0.5);
+}
+.promo .promo__block :hover .button__promo {
+  opacity: 1;
 }
 
 .footer-line__top {

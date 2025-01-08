@@ -145,6 +145,10 @@ body {
   color: var(--main-text-color);
 }
 
+.container__promo {
+  background-color: #355e75;
+}
+
 .content {
   max-width: calc(1440px + 20px * 2);
   margin: 0 auto;
@@ -211,7 +215,6 @@ body {
 
 // MAIN-PAGE------------------------------------------------------------
 // HEADER-------------------------------------------------------------
-
 .header__absolute {
   position: absolute;
   top: 0;
@@ -412,7 +415,6 @@ body {
 }
 
 // SLIDE-------------------------------------------------------------
-
 .bg-img__slide {
   position: relative;
   max-width: 1920px;
@@ -480,7 +482,6 @@ body {
 }
 
 // TITLE-------------------------------------------------------------
-
 .title {
   .title__subtitle {
     display: flex;
@@ -521,7 +522,6 @@ body {
 }
 
 // SERVICES-------------------------------------------------------------
-
 .services {
   display: flex;
   flex-direction: column;
@@ -600,12 +600,10 @@ body {
     align-items: flex-start;
     padding: 0px;
     gap: 20px;
-
     width: 364px;
     height: 44px;
 
     .services__button-left {
-      position: relative;
       display: flex;
       width: 168px;
       height: 44px;
@@ -613,32 +611,16 @@ body {
       .button {
         @include base_button(250px, var(--secondary-color), var(--secondary-text-color));
         p {
-          position: absolute;
-          left: 20px;
           font-family: "Raleway";
           font-style: normal;
           font-weight: 700;
           font-size: 15px;
-          line-height: 18px;
           text-transform: uppercase;
-        }
-      }
-
-      .services__button-left-icon {
-        width: 18px;
-        height: 18px;
-        position: absolute;
-        top: 50%;
-        right: 23px;
-        transform: translate(0, -50%);
-
-        z-index: 1;
-        svg {
-          fill: var(--secondary-color);
+          margin-right: 20px;
         }
       }
     }
-    :hover .services__button-left-icon svg {
+    :hover > svg {
       fill: var(--main-text-color);
     }
 
@@ -661,7 +643,6 @@ body {
           font-style: normal;
           font-weight: 700;
           font-size: 15px;
-          line-height: 18px;
           text-transform: uppercase;
         }
       }
@@ -876,6 +857,142 @@ body {
       font-size: 15px;
       line-height: 22px;
       text-transform: uppercase;
+    }
+  }
+}
+
+// PORTFOLIO-------------------------------------------------------------
+.portfolio {
+  display: flex;
+  padding: 0px;
+  gap: 30px;
+  .portfolio__block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .portfolio__block-item {
+      display: flex;
+      overflow: hidden;
+      width: 460px;
+      height: 300px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+    :hover img {
+      scale: 1.1;
+    }
+  }
+}
+
+.portfolio__button {
+  display: flex;
+  width: 188px;
+  height: 44px;
+  margin-top: 50px;
+  border-radius: 5px;
+  .button {
+    @include base_button(250px, var(--secondary-color), var(--secondary-text-color));
+    p {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      text-transform: uppercase;
+      margin-right: 20px;
+    }
+  }
+}
+:hover > svg {
+  fill: var(--main-text-color);
+}
+
+//PROMO-------------------------------------------------------------
+.promo {
+  display: flex;
+  margin-top: 50px;
+  gap: 50px;
+
+  max-width: 1440px;
+  height: 590px;
+  .promo__block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    .promo__item {
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 30px;
+      width: 322px;
+      height: 590px;
+
+      .promo__item-img {
+        overflow: hidden;
+
+        img {
+          display: flex;
+
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 5px;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      .button__promo {
+        opacity: 0;
+        position: absolute;
+        bottom: 130px;
+        left: 50%;
+        translate: -50%;
+        margin-top: 100px;
+        width: 194px;
+        height: 44px;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        .button {
+          @include base_button(
+            300px,
+            var(--main-text-color),
+            var(--secondary-color),
+            var(--main-text-color),
+            var(--secondary-color)
+          );
+          p {
+            font-family: "Mplus 1p";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+          }
+        }
+      }
+
+      p {
+        font-family: "Mplus 1p";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+    :hover img {
+      scale: 1.1;
+      filter: brightness(0.5);
+    }
+    :hover .button__promo {
+      opacity: 1;
     }
   }
 }
