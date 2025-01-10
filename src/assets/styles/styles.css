@@ -742,6 +742,7 @@ body {
   margin-top: 50px;
   width: 169px;
   height: 70px;
+  border: 1px solid var(--main-bg-color);
   border-radius: 5px;
 }
 .about .about__block .about__block-button .button {
@@ -1109,11 +1110,12 @@ body {
   margin-top: 50px;
   gap: 50px;
   max-width: 1440px;
-  height: 590px;
 }
 .promo .promo__block {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap: 50px;
 }
 .promo .promo__block .promo__item {
@@ -1219,6 +1221,191 @@ body {
   opacity: 1;
 }
 
+.reviews__title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.reviews__title .reviews__title-text {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 250;
+  font-size: 60px;
+  line-height: 50px;
+}
+.reviews__title .reviews__button {
+  display: flex;
+  width: 232px;
+  height: 44px;
+  border-radius: 5px;
+}
+.reviews__title .reviews__button .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--secondary-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.reviews__title .reviews__button .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-text-color);
+  z-index: -2;
+}
+.reviews__title .reviews__button .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.reviews__title .reviews__button .button:hover {
+  color: var(--main-text-color);
+}
+.reviews__title .reviews__button .button:hover:before {
+  height: 350px;
+  width: 350px;
+}
+.reviews__title .reviews__button .button p {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+.reviews__title :hover > svg {
+  fill: var(--main-text-color);
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+}
+.reviews .reviews_item {
+  gap: 30px;
+  width: 322px;
+  height: 441px;
+}
+.reviews .reviews_item .reviews_item-grade {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  width: 160px;
+  height: 24px;
+}
+.reviews .reviews_item .reviews_item-title {
+  height: 37px;
+  margin-top: 30px;
+}
+.reviews .reviews_item .reviews_item-title p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 37px;
+  color: #7095aa;
+}
+.reviews .reviews_item .reviews_item-text {
+  height: 240px;
+  margin-top: 30px;
+}
+.reviews .reviews_item .reviews_item-text p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+}
+.reviews .reviews_item .reviews_item-button {
+  width: 149px;
+  height: 50px;
+  margin-top: 30px;
+  border: 1px solid rgba(86, 146, 179, 0.31);
+  border-radius: 5px;
+}
+.reviews .reviews_item .reviews_item-button .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.reviews .reviews_item .reviews_item-button .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  z-index: -2;
+}
+.reviews .reviews_item .reviews_item-button .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.reviews .reviews_item .reviews_item-button .button:hover {
+  color: var(--main-text-color);
+}
+.reviews .reviews_item .reviews_item-button .button:hover:before {
+  height: 250px;
+  width: 250px;
+}
+.reviews .reviews_item .reviews_item-button p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: none;
+}
+
 .footer-line__top {
   border-top: 1px solid #122d3b;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=styles.css.map */
