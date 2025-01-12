@@ -26,7 +26,6 @@ p {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  line-height: 24px;
 }
 
 img {
@@ -107,14 +106,13 @@ body {
   z-index: 100;
   background-color: none;
   opacity: 100%;
+  background: linear-gradient(180deg, rgba(11, 27, 35, 0.8) 0%, rgba(11, 27, 35, 0) 100%);
 }
 
 .top__header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px;
   height: 60px;
 
   .left {
@@ -126,21 +124,15 @@ body {
     .logo {
       display: flex;
       align-items: center;
-      padding: 0px;
-      margin: 0px;
       gap: 20px;
+      height: 60px;
       cursor: pointer;
 
-      max-width: 289px;
-      height: 60px;
       .logo-img {
         display: flex;
-        flex-direction: row;
         justify-content: center;
         align-items: center;
-        padding: 0px;
         gap: 10px;
-
         width: 60px;
         height: 60px;
 
@@ -159,28 +151,18 @@ body {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0px;
-
-        max-width: 209px;
-        height: 52px;
+        width: 210px;
 
         .logo-text__title {
-          max-width: 209px;
-          height: 32px;
-
-          font-style: normal;
-
+          display: flex;
           font-weight: 800;
           font-size: 30px;
-          white-space: nowrap;
           line-height: 100%;
           text-transform: uppercase;
         }
 
         .logo-text__subtitle {
-          max-width: 209px;
-          height: 20px;
-
+          display: flex;
           font-weight: 400;
           font-size: 17px;
           line-height: 100%;
@@ -189,16 +171,17 @@ body {
     }
 
     .line {
+      display: flex;
       width: 0px;
       height: 60px;
-
       opacity: 0.5;
       border: 1px solid var(--main-text-color);
     }
 
     .address {
-      max-width: 301px;
-      height: 44px;
+      display: flex;
+      height: 60px;
+      align-items: center;
       p {
         font-family: "Mplus 1p";
         font-weight: 400;
@@ -406,129 +389,125 @@ body {
 }
 
 // SERVICES-------------------------------------------------------------
-.services {
+
+.services__block {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 50px;
 
-  max-width: 1440px;
-  height: 100%;
-  margin-bottom: 50px;
-
-  .services__block {
+  .services__block-item {
+    position: relative;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0px;
-    gap: 50px;
 
-    max-width: 1440px;
-    width: 100%;
-    height: 300px;
+    box-shadow: 0px 15px 34.1px -22px rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
 
-    .services__block-item {
-      position: relative;
+    .services__block-item-img {
+      display: flex;
+      overflow: hidden;
+      width: 322.5px;
+      height: 300px;
+      border-radius: 5px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .services__block-item-img-big {
+      display: flex;
+      overflow: hidden;
+      width: 695px;
+      height: 300px;
+      border-radius: 5px;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .services__block-item-text {
+      position: absolute;
+      bottom: 0;
       display: flex;
       flex-direction: row;
       align-items: center;
+      padding: 30px;
+      gap: 30px;
+      background: linear-gradient(180deg, rgba(11, 27, 35, 0) 0%, rgba(11, 27, 35, 0.74) 69.59%);
 
-      box-shadow: 0px 15px 34.1px -22px rgba(0, 0, 0, 0.6);
-      border-radius: 5px;
-
-      .services__block-item-img {
-        display: flex;
-        overflow: hidden;
-        width: 322px;
-        height: 300px;
-        border-radius: 5px;
-
-        img {
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-        }
+      width: 322px;
+      .services__block-item-text-number {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 50%;
       }
-      .services__block-item-text {
-        position: absolute;
-        bottom: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 30px;
-        gap: 30px;
-
-        width: 322px;
-        .services__block-item-text-number {
-          font-family: "Raleway";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 50px;
-          line-height: 50%;
-        }
-        .services__block-item-text-title {
-          font-family: "Mplus 1p";
-          font-style: normal;
-          font-weight: 400;
-          font-size: 25px;
-          line-height: 37px;
-        }
+      .services__block-item-text-title {
+        font-family: "Mplus 1p";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 37px;
       }
     }
   }
+}
 
-  .services__nav {
+.services__nav {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  width: 364px;
+  height: 44px;
+  margin-top: 50px;
+
+  .services__button-left {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 20px;
-    width: 364px;
+    width: 168px;
     height: 44px;
-
-    .services__button-left {
-      display: flex;
-      width: 168px;
-      height: 44px;
-      border-radius: 5px;
-      .button {
-        @include base_button(250px, var(--secondary-color), var(--secondary-text-color));
-        p {
-          font-family: "Raleway";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 15px;
-          text-transform: uppercase;
-          margin-right: 20px;
-        }
+    border-radius: 5px;
+    .button {
+      @include base_button(250px, var(--secondary-color), var(--secondary-text-color));
+      p {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: uppercase;
+        margin-right: 20px;
       }
     }
-    :hover > svg {
-      fill: var(--main-text-color);
-    }
+  }
+  :hover > svg {
+    fill: var(--main-text-color);
+  }
 
-    .services__button-right {
-      display: flex;
+  .services__button-right {
+    display: flex;
 
-      width: 176px;
-      height: 44px;
-      border-radius: 5px;
-      .button {
-        @include base_button(
-          250px,
-          var(--main-text-color),
-          var(--main-bg-color),
-          var(--main-text-color),
-          var(--main-bg-color)
-        );
-        p {
-          font-family: "Raleway";
-          font-style: normal;
-          font-weight: 700;
-          font-size: 15px;
-          text-transform: uppercase;
-        }
+    width: 176px;
+    height: 44px;
+    border-radius: 5px;
+    .button {
+      @include base_button(
+        250px,
+        var(--main-text-color),
+        var(--main-bg-color),
+        var(--main-text-color),
+        var(--main-bg-color)
+      );
+      p {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        text-transform: uppercase;
       }
     }
   }
@@ -993,6 +972,169 @@ body {
 }
 
 // FOOTER-------------------------------------------------------------
-.footer-line__top {
+
+.footer__top-line {
   border-top: 1px solid #122d3b;
+}
+
+.container__footer {
+  position: relative;
+  max-width: 1920px;
+  margin: 0 auto;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  overflow: hidden;
+}
+
+.footer_block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 60px;
+    cursor: pointer;
+
+    .logo-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 60px;
+      height: 60px;
+
+      background: var(--secondary-color);
+      border-radius: 50%;
+      .logo-img__text {
+        font-weight: 900;
+        font-size: 28px;
+        text-transform: uppercase;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 210px;
+
+      .logo-text__title {
+        display: flex;
+        font-weight: 800;
+        font-size: 30px;
+        line-height: 100%;
+        text-transform: uppercase;
+      }
+
+      .logo-text__subtitle {
+        display: flex;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 100%;
+      }
+    }
+  }
+
+  .line {
+    display: flex;
+    width: 0px;
+    height: 60px;
+    opacity: 0.5;
+    border: 1px solid var(--main-text-color);
+  }
+
+  .address {
+    display: flex;
+    width: 301px;
+    height: 60px;
+    align-items: center;
+    p {
+      font-family: "Mplus 1p";
+      font-weight: 400;
+      font-size: 15px;
+    }
+  }
+
+  .phone {
+    position: relative;
+    display: flex;
+    width: 231px;
+    height: 40px;
+    p {
+      display: flex;
+
+      font-family: "Mplus 1p";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      align-items: center;
+    }
+
+    .phone__arrow {
+      width: 24px;
+      height: 24px;
+      cursor: pointer;
+
+      position: absolute;
+      top: 8px;
+      right: 0px;
+    }
+  }
+
+  .button-wrapper {
+    width: 151px;
+    height: 38px;
+    border-radius: 5px;
+    .button {
+      @include base_button(250px);
+    }
+  }
+
+  .socials {
+    display: flex;
+    gap: 20px;
+
+    .socials__link {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      position: relative;
+
+      .socials__icon {
+        top: 2px;
+        position: absolute;
+      }
+    }
+  }
+}
+
+.footer-bg-left {
+  position: absolute;
+  width: 714px;
+  height: 974px;
+  right: 1870px;
+  bottom: -340px;
+
+  background-image: url("../images/footer-bg-1.png");
+  background-size: cover;
+  transform: rotate(-40.3deg);
+  z-index: 10;
+}
+
+.footer-bg-right {
+  position: absolute;
+  width: 586.9px;
+  height: 800.62px;
+  left: 1570px;
+  bottom: -250px;
+  background-image: url("../images/footer-bg-1.png");
+  background-size: cover;
+  transform: rotate(-11.24deg);
+  z-index: 10;
 }
