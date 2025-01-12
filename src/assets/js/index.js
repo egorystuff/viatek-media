@@ -1,15 +1,8 @@
-// $(function () {
-//   $(".btn-6")
-//     .on("mouseenter", function (e) {
-//       var parentOffset = $(this).offset(),
-//         relX = e.pageX - parentOffset.left,
-//         relY = e.pageY - parentOffset.top;
-//       $(this).find("span").css({ top: relY, left: relX });
-//     })
-//     .on("mouseout", function (e) {
-//       var parentOffset = $(this).offset(),
-//         relX = e.pageX - parentOffset.left,
-//         relY = e.pageY - parentOffset.top;
-//       $(this).find("span").css({ top: relY, left: relX });
-//     });
-// });
+const elements = document.querySelectorAll(".services__block-item");
+
+elements.forEach((element) => {
+  const color = element.getAttribute("data-color") || "#112630";
+  const size = element.hasAttribute("data-size") ? "1000px" : "600px";
+  element.style.setProperty("--color", color);
+  element.style.setProperty("--size", size);
+});

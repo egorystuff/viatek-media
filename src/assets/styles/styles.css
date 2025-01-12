@@ -348,11 +348,35 @@ body {
   padding: 0px 20px;
 }
 .nav-header .nav-header__list .nav-header__list-item {
+  position: relative;
+  display: flex;
   font-family: "Mplus 1p";
   font-weight: 500;
   font-size: 15px;
   padding: 20px;
   text-transform: uppercase;
+  transition: all ease-in-out 0.3s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.nav-header .nav-header__list .nav-header__list-item:before {
+  content: "";
+  position: absolute;
+  bottom: -500px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  transition: all 0.3s;
+}
+.nav-header .nav-header__list .nav-header__list-item:hover {
+  color: var(--secondary-color);
+}
+.nav-header .nav-header__list .nav-header__list-item:hover:before {
+  transform: translate(-50%, -1%);
 }
 
 .bg-img__slide {
@@ -495,6 +519,7 @@ body {
   display: flex;
   box-shadow: 0px 15px 34.1px -22px rgba(0, 0, 0, 0.6);
   border-radius: 5px;
+  overflow: hidden;
 }
 .services__block .services__block-item .services__block-item-img {
   display: flex;
@@ -511,7 +536,6 @@ body {
 }
 .services__block .services__block-item .services__block-item-img-big {
   display: flex;
-  overflow: hidden;
   width: 695px;
   height: 300px;
   border-radius: 5px;
@@ -525,13 +549,13 @@ body {
 .services__block .services__block-item .services__block-item-text {
   position: absolute;
   bottom: 0;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 30px;
   gap: 30px;
   background: linear-gradient(180deg, rgba(11, 27, 35, 0) 0%, rgba(11, 27, 35, 0.74) 69.59%);
-  width: 322px;
 }
 .services__block .services__block-item .services__block-item-text .services__block-item-text-number {
   font-family: "Raleway";
@@ -539,6 +563,7 @@ body {
   font-weight: 700;
   font-size: 50px;
   line-height: 50%;
+  z-index: 2;
 }
 .services__block .services__block-item .services__block-item-text .services__block-item-text-title {
   font-family: "Mplus 1p";
@@ -546,6 +571,23 @@ body {
   font-weight: 400;
   font-size: 25px;
   line-height: 37px;
+  z-index: 2;
+}
+.services__block .services__block-item:before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  right: -180px;
+  height: 0;
+  width: 0;
+  border-radius: 50%;
+  background-color: var(--color);
+  transition: all 0.6s ease-in-out;
+  z-index: 2;
+}
+.services__block .services__block-item:hover:before {
+  width: var(--size);
+  height: var(--size);
 }
 
 .services__nav {
@@ -945,11 +987,10 @@ body {
   width: 100%;
   height: 100%;
   border-radius: inherit;
-  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
   cursor: pointer;
   color: var(--main-text-color);
   text-transform: uppercase;
-  transition: all 0.5s;
+  transition: all 0.7s;
   position: relative;
   z-index: 1;
   overflow: hidden;
@@ -967,21 +1008,22 @@ body {
 .price__block .price__block-button .button:before {
   content: "";
   position: absolute;
-  bottom: -100px;
-  left: -50px;
+  bottom: -1200px;
+  left: 50%;
+  transform: translate(-50%);
   width: 0px;
-  height: 0;
+  height: 2000px;
   border-radius: 50%;
   background-color: var(--main-bg-color);
-  transition: all 0.5s;
+  transition: all 0.7s;
   z-index: -1;
 }
 .price__block .price__block-button .button:hover {
   color: var(--secondary-color);
 }
 .price__block .price__block-button .button:hover:before {
-  height: 250px;
-  width: 250px;
+  height: 2000px;
+  width: 2000px;
 }
 .price__block .price__block-button p {
   display: flex;

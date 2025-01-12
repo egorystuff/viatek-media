@@ -54,3 +54,145 @@
     }
   }
 }
+
+//----------------------------------------------------------------
+
+@mixin price_button(
+  $color: var(--main-text-color),
+  $main-bg-color: var(--main-bg-color),
+  $bg-color: var(--secondary-color),
+  $secondary-text-color: var(--main-text-color)
+) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  cursor: pointer;
+
+  color: $color;
+  text-transform: uppercase;
+
+  transition: all 0.7s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $main-bg-color;
+    z-index: -2;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: -1200px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 0px;
+    height: 2000px;
+    border-radius: 50%;
+    background-color: $bg-color;
+    transition: all 0.7s;
+    z-index: -1;
+  }
+  &:hover {
+    color: $secondary-text-color;
+    &:before {
+      height: 2000px;
+      width: 2000px;
+    }
+  }
+}
+
+//----------------------------------------------------------------
+
+@mixin services($color, $size) {
+  position: relative;
+  display: flex;
+  box-shadow: 0px 15px 34.1px -22px rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  overflow: hidden;
+
+  .services__block-item-img {
+    display: flex;
+    overflow: hidden;
+    width: 322.5px;
+    height: 300px;
+    border-radius: 5px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .services__block-item-img-big {
+    display: flex;
+    width: 695px;
+    height: 300px;
+    border-radius: 5px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .services__block-item-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    gap: 30px;
+    background: linear-gradient(180deg, rgba(11, 27, 35, 0) 0%, rgba(11, 27, 35, 0.74) 69.59%);
+
+    .services__block-item-text-number {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 50%;
+      z-index: 2;
+    }
+    .services__block-item-text-title {
+      font-family: "Mplus 1p";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 25px;
+      line-height: 37px;
+      z-index: 2;
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    right: -180px;
+    height: 0;
+    width: 0;
+    border-radius: 50%;
+    background-color: $color;
+    transition: all 0.6s ease-in-out;
+    z-index: 2;
+  }
+  &:hover {
+    &:before {
+      width: $size;
+      height: $size;
+    }
+  }
+}
