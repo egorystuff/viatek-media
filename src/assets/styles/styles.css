@@ -563,7 +563,7 @@ body {
   font-weight: 700;
   font-size: 50px;
   line-height: 50%;
-  z-index: 2;
+  z-index: 10;
 }
 .services__block .services__block-item .services__block-item-text .services__block-item-text-title {
   font-family: "Mplus 1p";
@@ -571,23 +571,22 @@ body {
   font-weight: 400;
   font-size: 25px;
   line-height: 37px;
-  z-index: 2;
+  z-index: 10;
 }
 .services__block .services__block-item:before {
   content: "";
   position: absolute;
-  top: -180px;
-  right: -180px;
-  height: 0;
-  width: 0;
+  top: -750px;
+  right: -750px;
+  width: 1500px;
+  height: 1500px;
   border-radius: 50%;
-  background-color: var(--color);
-  transition: all 0.6s ease-in-out;
-  z-index: 2;
+  border: 750px solid var(--color);
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
 }
 .services__block .services__block-item:hover:before {
-  width: var(--size);
-  height: var(--size);
+  border: 0px solid var(--color);
 }
 
 .services__nav {
