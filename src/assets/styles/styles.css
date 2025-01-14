@@ -1040,19 +1040,27 @@ body {
   margin: 10px 10px 10px 20px;
   width: 24px;
   height: 24px;
+  transition: transform 0.5s ease-in-out;
+}
+.price__block .price__block-list .price__block-item .price__block-item-top .price__block-item-wrapper .item-icon.active {
+  transform: rotate(180deg);
 }
 .price__block .price__block-list .price__block-item .price__block-item-details {
-  display: none;
   max-width: 1440px;
-  padding: 20px 30px;
-  margin-bottom: 50px;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+.price__block .price__block-list .price__block-item .price__block-item-details.active {
+  max-height: 20vh;
 }
 .price__block .price__block-list .price__block-item .price__block-item-details .details__block {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   height: 230px;
-  padding: 0px;
+  padding: 20px 30px;
+  margin-bottom: 100px;
   gap: 50px;
   overflow: hidden;
 }
