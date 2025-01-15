@@ -36,3 +36,40 @@ priceBlockItems.forEach((item) => {
     icon.classList.toggle("active");
   });
 });
+
+//  slider animation
+//-------------------------------------------------------------------------------------
+const slideContainer = document.querySelector(".bg-img__slide");
+const slides = slideContainer.querySelectorAll("img");
+const paginationItems = document.querySelectorAll(".slide-pagination-item");
+const prevButton = document.querySelector(".slide-control.prev");
+const nextButton = document.querySelector(".slide-control.next");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+  paginationItems.forEach((item, i) => {
+    item.classList.toggle("active", i === index);
+  });
+}
+
+prevButton.addEventListener("click", () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  slideContainer.classList.add("slide-out-left");
+  setTimeout(() => {
+    showSlide(currentSlide);
+    slideContainer.classList.remove("slide-out-left");
+  }, 300);
+});
+
+nextButton.addEventListener("click", () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  slideContainer.classList.add("slide-out-right");
+  setTimeout(() => {
+    showSlide(currentSlide);
+    slideContainer.classList.remove("slide-out-right");
+  }, 300);
+});
