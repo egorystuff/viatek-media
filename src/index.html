@@ -57,12 +57,20 @@
 
           <nav class="nav-header">
             <ul class="nav-header__list">
-              <li><a class="nav-header__list-item" href="#">О компании</a></li>
-              <li><a class="nav-header__list-item" href="#">Услуги</a></li>
-              <li><a class="nav-header__list-item" href="#">Новости</a></li>
-              <li><a class="nav-header__list-item" href="#">Прайс</a></li>
-              <li><a class="nav-header__list-item" href="#">Портфолио</a></li>
-              <li><a class="nav-header__list-item" href="#">Контакты</a></li>
+              <li class="nav-header__list-item"><a href="#">О компании</a></li>
+              <li class="nav-header__list-item dropdown">
+                <a href="#">Услуги</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">НОВЫЙ ГОД</a></li>
+                  <li><a href="#">БАНКЕТ</a></li>
+                  <li><a href="#">ФУРШЕТ</a></li>
+                  <li><a href="#">БАРБЕКЮ</a></li>
+                </ul>
+              </li>
+              <li class="nav-header__list-item"><a href="#">Новости</a></li>
+              <li class="nav-header__list-item"><a href="#">Прайс</a></li>
+              <li class="nav-header__list-item"><a href="#">Портфолио</a></li>
+              <li class="nav-header__list-item"><a href="#">Контакты</a></li>
             </ul>
           </nav>
         </div>
@@ -79,11 +87,41 @@
             <img src="./assets/images/slide-1.png" alt="" />
             <img src="./assets/images/slide-1.png" alt="" />
 
+            <div class="text-main__slide active">
+              <div class="text-main__slide-title">
+                Выездное <br />
+                ресторанное<br />
+                обслуживание 1
+              </div>
+              <div class="text-main__slide-subtitle">
+                для событий любого масштаба <br />
+                при любых условиях
+              </div>
+              <div class="button__slide">
+                <button class="button"><p>Узнать больше</p></button>
+              </div>
+            </div>
+
             <div class="text-main__slide">
               <div class="text-main__slide-title">
                 Выездное <br />
                 ресторанное<br />
-                обслуживание
+                обслуживание 2
+              </div>
+              <div class="text-main__slide-subtitle">
+                для событий любого масштаба <br />
+                при любых условиях
+              </div>
+              <div class="button__slide">
+                <button class="button"><p>Узнать больше</p></button>
+              </div>
+            </div>
+
+            <div class="text-main__slide">
+              <div class="text-main__slide-title">
+                Выездное <br />
+                ресторанное<br />
+                обслуживание 3
               </div>
               <div class="text-main__slide-subtitle">
                 для событий любого масштаба <br />
@@ -96,12 +134,7 @@
           </div>
 
           <div class="slide-pagination">
-            <div class="slide-pagination-item active">1</div>
-            <div class="slide-pagination-item">2</div>
-            <div class="slide-pagination-item">3</div>
-          </div>
-
-          <div class="slide-controls">
+            <div class="slide-pagination-item"></div>
             <button class="slide-control prev">&#10094;</button>
             <button class="slide-control next">&#10095;</button>
           </div>

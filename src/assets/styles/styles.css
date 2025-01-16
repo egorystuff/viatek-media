@@ -154,7 +154,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 10;
   background-color: none;
   opacity: 100%;
   background: linear-gradient(180deg, rgba(11, 27, 35, 0.8) 0%, rgba(11, 27, 35, 0) 100%);
@@ -348,8 +348,6 @@ body {
   padding: 0px 20px;
 }
 .nav-header .nav-header__list .nav-header__list-item {
-  position: relative;
-  display: flex;
   font-family: "Mplus 1p";
   font-weight: 500;
   font-size: 15px;
@@ -357,8 +355,9 @@ body {
   text-transform: uppercase;
   transition: all ease-in-out 0.3s;
   position: relative;
-  z-index: 1;
+  z-index: 0;
   overflow: hidden;
+  cursor: pointer;
 }
 .nav-header .nav-header__list .nav-header__list-item:before {
   content: "";
@@ -375,8 +374,35 @@ body {
 .nav-header .nav-header__list .nav-header__list-item:hover {
   color: var(--secondary-color);
 }
+.nav-header .nav-header__list .nav-header__list-item:hover .dropdown-menu {
+  display: block;
+}
 .nav-header .nav-header__list .nav-header__list-item:hover:before {
   transform: translate(-50%, -1%);
+}
+.nav-header .nav-header__list .nav-header__list-item .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 0;
+  z-index: 2;
+}
+.nav-header .nav-header__list .nav-header__list-item .dropdown-menu li {
+  margin-bottom: 10px;
+}
+.nav-header .nav-header__list .nav-header__list-item .dropdown-menu li:last-child {
+  margin-bottom: 0;
+}
+.nav-header .nav-header__list .nav-header__list-item .dropdown-menu a {
+  text-decoration: none;
+  color: #333;
+}
+.nav-header .nav-header__list .nav-header__list-item .dropdown-menu a:hover {
+  color: #666;
 }
 
 .bg-img__slide {
@@ -394,6 +420,99 @@ body {
      object-fit: cover;
 }
 .bg-img__slide img.active {
+  display: block;
+  animation: slide-in 0.3s ease-in-out forwards;
+}
+.bg-img__slide .text-main__slide {
+  display: none;
+  position: absolute;
+  top: 205px;
+  left: 50%;
+  transform: translate(-49%);
+  max-width: 1480px;
+  width: 100%;
+  height: 795px;
+}
+.bg-img__slide .text-main__slide .text-main__slide-title {
+  display: flex;
+  margin-top: 100px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 94px;
+  color: var(--main-text-color);
+}
+.bg-img__slide .text-main__slide .text-main__slide-subtitle {
+  margin-top: 50px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47px;
+  color: var(--main-text-color);
+}
+.bg-img__slide .text-main__slide .button__slide {
+  margin-top: 100px;
+  width: 232px;
+  height: 70px;
+  border-radius: 5px;
+}
+.bg-img__slide .text-main__slide .button__slide .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.5s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.bg-img__slide .text-main__slide .button__slide .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  z-index: -2;
+}
+.bg-img__slide .text-main__slide .button__slide .button:before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -50px;
+  width: 0px;
+  height: 0;
+  border-radius: 50%;
+  background-color: var(--main-text-color);
+  transition: all 0.5s;
+  z-index: -1;
+}
+.bg-img__slide .text-main__slide .button__slide .button:hover {
+  color: var(--secondary-color);
+}
+.bg-img__slide .text-main__slide .button__slide .button:hover:before {
+  height: 300px;
+  width: 300px;
+}
+.bg-img__slide .text-main__slide .button__slide .button p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+}
+.bg-img__slide .text-main__slide.active {
   display: block;
   animation: slide-in 0.3s ease-in-out forwards;
 }
@@ -419,7 +538,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-25%);
+    transform: translateX(-3%);
   }
 }
 @keyframes slide-out-right {
@@ -427,142 +546,54 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(25%);
+    transform: translateX(3%);
   }
 }
 
 .slide-pagination {
   display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  width: 207px;
+  height: 64px;
+  left: 1673px;
+  top: 837px;
 }
 
 .slide-pagination-item {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #ccc;
-  margin: 0 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.slide-pagination-item.active {
-  background-color: #000;
-}
-
-.slide-controls {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-.slide-controls .slide-control {
-  font-size: 24px;
-  color: #000;
-  background-color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-.slide-controls .slide-control:hover {
-  opacity: 0.8;
-}
-.slide-controls .slide-control.prev {
-  margin-right: 10px;
-}
-.slide-controls .slide-control.next {
-  margin-left: 10px;
-}
-
-.text-main__slide {
-  position: absolute;
-  top: 205px;
-  left: 50%;
-  transform: translate(-49%);
-  max-width: 1480px;
-  width: 100%;
-  height: 795px;
-}
-.text-main__slide .text-main__slide-title {
-  display: flex;
-  margin-top: 100px;
+  width: 39px;
+  height: 29px;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
-  font-size: 80px;
-  line-height: 94px;
-  color: var(--main-text-color);
-}
-.text-main__slide .text-main__slide-subtitle {
-  margin-top: 50px;
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 47px;
-  color: var(--main-text-color);
-}
-.text-main__slide .button__slide {
-  margin-top: 100px;
-  width: 232px;
-  height: 70px;
-  border-radius: 5px;
-}
-.text-main__slide .button__slide .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Mplus 1p";
-  font-weight: 800;
-  font-size: 12px;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  box-shadow: 0px 3px 4px -2px rgba(86, 146, 179, 0.31);
-  cursor: pointer;
-  color: var(--main-text-color);
+  font-size: 25px;
+  line-height: 29px;
   text-transform: uppercase;
-  transition: all 0.5s;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
+  color: var(--main-text-color);
 }
-.text-main__slide .button__slide .button:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--secondary-color);
-  z-index: -2;
+
+.slide-control {
+  font-size: 24px;
+  align-items: center;
+  color: var(--main-text-color);
+  width: 64px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
-.text-main__slide .button__slide .button:before {
-  content: "";
-  position: absolute;
-  bottom: -100px;
-  left: -50px;
-  width: 0px;
-  height: 0;
-  border-radius: 50%;
-  background-color: var(--main-text-color);
-  transition: all 0.5s;
-  z-index: -1;
+.slide-control:hover {
+  background: var(--secondary-color);
 }
-.text-main__slide .button__slide .button:hover {
-  color: var(--secondary-color);
+.slide-control.prev {
+  margin-right: 1px;
 }
-.text-main__slide .button__slide .button:hover:before {
-  height: 300px;
-  width: 300px;
-}
-.text-main__slide .button__slide .button p {
-  font-family: "Mplus 1p";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
+.slide-control.next {
+  margin-left: 5px;
 }
 
 .title .title__subtitle {

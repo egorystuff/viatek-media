@@ -41,6 +41,7 @@ priceBlockItems.forEach((item) => {
 //-------------------------------------------------------------------------------------
 const slideContainer = document.querySelector(".bg-img__slide");
 const slides = slideContainer.querySelectorAll("img");
+const textMain = document.querySelectorAll(".text-main__slide");
 const paginationItems = document.querySelectorAll(".slide-pagination-item");
 const prevButton = document.querySelector(".slide-control.prev");
 const nextButton = document.querySelector(".slide-control.next");
@@ -51,16 +52,26 @@ function showSlide(index) {
   slides.forEach((slide, i) => {
     slide.classList.toggle("active", i === index);
   });
+  textMain.forEach((item, i) => {
+    item.classList.toggle("active", i === index);
+  });
   paginationItems.forEach((item, i) => {
     item.classList.toggle("active", i === index);
   });
 }
+
+function updatePagination() {
+  const paginationItem = document.querySelector(".slide-pagination-item");
+  paginationItem.textContent = `${currentSlide + 1}/${slides.length}`;
+}
+updatePagination();
 
 prevButton.addEventListener("click", () => {
   currentSlide = (currentSlide - 1 + slides.length) % slides.length;
   slideContainer.classList.add("slide-out-left");
   setTimeout(() => {
     showSlide(currentSlide);
+    updatePagination();
     slideContainer.classList.remove("slide-out-left");
   }, 300);
 });
@@ -70,6 +81,7 @@ nextButton.addEventListener("click", () => {
   slideContainer.classList.add("slide-out-right");
   setTimeout(() => {
     showSlide(currentSlide);
+    updatePagination();
     slideContainer.classList.remove("slide-out-right");
   }, 300);
 });
