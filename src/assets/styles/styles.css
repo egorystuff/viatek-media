@@ -1465,11 +1465,22 @@ body {
   fill: var(--main-text-color);
 }
 
+.promo-wrapper {
+  display: flex;
+  margin-top: 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
 .promo {
   display: flex;
   margin-top: 50px;
   gap: 50px;
   max-width: 1440px;
+}
+.promo.margin-top-none {
+  margin-top: 0px;
 }
 .promo .promo__block {
   display: flex;

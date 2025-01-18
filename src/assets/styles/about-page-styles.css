@@ -1,0 +1,56 @@
+.about__page .about__page-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  margin-bottom: 150px;
+  height: 60px;
+}
+.about__page .about__page-title .title__line {
+  width: 83px;
+  height: 0px;
+  border: 1px solid var(--secondary-color);
+}
+.about__page .about__page-title p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 250;
+  font-size: 40px;
+  line-height: 150%;
+  color: #2cb4fe;
+}
+.about__page .about__page-title.right {
+  justify-content: flex-end;
+}
+.about__page .about__page-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 150px;
+  margin-bottom: 150px;
+}
+.about__page .about__page-content:last-child {
+  margin-bottom: 50px;
+}
+.about__page .about__page-content .about__page-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 30px;
+  width: 50%;
+  height: auto;
+}
+.about__page .about__page-content .about__page-text p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 150%;
+}
+.about__page .about__page-content .about__page-img {
+  width: 50%;
+  height: auto;
+}/*# sourceMappingURL=about-page-styles.css.map */

@@ -982,10 +982,23 @@ body {
 }
 
 //PROMO-------------------------------------------------------------
+
+.promo-wrapper {
+  display: flex;
+  margin-top: 0px;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
 .promo {
   display: flex;
   margin-top: 50px;
   gap: 50px;
+
+  &.margin-top-none {
+    margin-top: 0px;
+  }
 
   max-width: 1440px;
   .promo__block {
