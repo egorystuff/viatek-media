@@ -1590,6 +1590,40 @@ body {
   text-transform: uppercase;
 }
 
+.price__page {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.price__page:last-child {
+  margin-bottom: 75px;
+}
+.price__page .price__page-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
+  margin-bottom: 50px;
+  height: 60px;
+}
+.price__page .price__page-title .title__line {
+  width: 83px;
+  height: 0px;
+  border: 1px solid var(--secondary-color);
+}
+.price__page .price__page-title p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 250;
+  font-size: 40px;
+  line-height: 150%;
+  color: #2cb4fe;
+}
+.price__page .price__page-title.right {
+  justify-content: flex-end;
+}
+
 .portfolio {
   display: flex;
   padding: 0px;
@@ -2192,36 +2226,123 @@ body {
   z-index: 10;
 }
 
-.price__page {
+.contacts__page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 100px;
+  margin-bottom: 100px;
+}
+.contacts__page .contacts__info {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
   gap: 50px;
+  width: 47%;
+  height: auto;
 }
-.price__page:last-child {
-  margin-bottom: 75px;
+.contacts__page .contacts__info .contacts__info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
 }
-.price__page .price__page-title {
+.contacts__page .contacts__info .contacts__info-item .contacts__info-title {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 40px;
+  line-height: 47px;
+  color: var(--secondary-color);
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-text {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 150%;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-phones p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 150%;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
-  gap: 10px;
-  margin-bottom: 50px;
-  height: 60px;
+  gap: 20px;
 }
-.price__page .price__page-title .title__line {
-  width: 83px;
-  height: 0px;
-  border: 1px solid var(--secondary-color);
+.contacts__page .contacts__request {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 30px;
+  width: 46.5%;
+  height: auto;
 }
-.price__page .price__page-title p {
-  font-family: "Mplus 1p";
+.contacts__page .contacts__request .contacts__request-title {
+  font-family: "Raleway";
   font-style: normal;
-  font-weight: 250;
+  font-weight: 200;
   font-size: 40px;
-  line-height: 150%;
-  color: #2cb4fe;
+  line-height: 47px;
+  background-color: transparent;
+  color: var(--secondary-color);
 }
-.price__page .price__page-title.right {
-  justify-content: flex-end;
+.contacts__page .contacts__request .contacts__request-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 30px;
+  width: 100%;
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item {
+  width: 100%;
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item input {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  padding: 20px 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #7095aa;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item textarea {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  padding: 20px;
+  width: 100%;
+  height: 127px;
+  background: #112630;
+  border: 1px solid #7095aa;
+  border-radius: 5px;
+  resize: none;
+  overflow-y: auto;
+  color: var(--main-text-color);
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item textarea:focus {
+  outline: none;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
 }/*# sourceMappingURL=styles.css.map */
