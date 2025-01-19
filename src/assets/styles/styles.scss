@@ -1,6 +1,7 @@
 @import "./fonts.scss";
 @import "./mixins.scss";
 @import "./about-page-styles.scss";
+@import "./services-page-styles.scss";
 
 * {
   padding: 0;
@@ -1356,3 +1357,44 @@ body {
 }
 
 //--------------------------------------------------------------
+
+.price__page {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+
+  &:last-child {
+    margin-bottom: 75px;
+  }
+
+  .price__page-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    margin-bottom: 50px;
+
+    height: 60px;
+
+    .title__line {
+      width: 83px;
+      height: 0px;
+      border: 1px solid var(--secondary-color);
+    }
+
+    p {
+      font-family: "Mplus 1p";
+      font-style: normal;
+      font-weight: 250;
+      font-size: 40px;
+      line-height: 150%;
+
+      color: #2cb4fe;
+    }
+
+    &.right {
+      justify-content: flex-end;
+    }
+  }
+}

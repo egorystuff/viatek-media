@@ -57,23 +57,33 @@
 
           <nav class="nav-header">
             <ul class="nav-header__list">
-              <li class="nav-header__list-item hidden"><a href="about.html">О компании</a></li>
-              <li class="nav-header__list-item">
+              <li class="nav-header__list-item hidden" onclick="location.href='about.html'">
+                <a href="about.html">О компании</a>
+              </li>
+              <li class="nav-header__list-item" onclick="location.href='services.html'">
                 <a class="dropdown-link" href="services.html"
                   >Услуги
                   <img class="dropdown-arrow" src="./assets/images/chevron-down-small.png" />
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href="services.html">НОВЫЙ ГОД</a></li>
-                  <li><a href="services.html">БАНКЕТ</a></li>
-                  <li><a href="services.html">ФУРШЕТ</a></li>
-                  <li><a href="services.html">БАРБЕКЮ</a></li>
+                  <li onclick="location.href='services.html'"><a href="services.html">НОВЫЙ ГОД</a></li>
+                  <li onclick="location.href='services.html'"><a href="services.html">БАНКЕТ</a></li>
+                  <li onclick="location.href='services.html'"><a href="services.html">ФУРШЕТ</a></li>
+                  <li onclick="location.href='services.html'"><a href="services.html">БАРБЕКЮ</a></li>
                 </ul>
               </li>
-              <li class="nav-header__list-item hidden"><a href="promo.html">Акции и новости</a></li>
-              <li class="nav-header__list-item hidden"><a href="#">Прайс</a></li>
-              <li class="nav-header__list-item hidden"><a href="#">Портфолио</a></li>
-              <li class="nav-header__list-item hidden"><a href="#">Контакты</a></li>
+              <li class="nav-header__list-item hidden" onclick="location.href='promo.html'">
+                <a href="promo.html">Акции и новости</a>
+              </li>
+              <li class="nav-header__list-item hidden" onclick="location.href='price.html'">
+                <a href="price.html">Прайс</a>
+              </li>
+              <li class="nav-header__list-item hidden" onclick="location.href='portfolio.html'">
+                <a href="portfolio.html">Портфолио</a>
+              </li>
+              <li class="nav-header__list-item hidden" onclick="location.href='contacts.html'">
+                <a href="contacts.html">Контакты</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -102,10 +112,288 @@
         </div>
       </section>
 
-      <!-- About -->
+      <!-- Services -->
       <section>
         <div class="container">
-          <div class="content">Услуги</div>
+          <div class="content">
+            <div style="font-size: 50px; margin: 50px 0">Тут будет навигация</div>
+
+            <div class="services__page">
+              <div class="services__page-content">
+                <h1>Обслуживание новогодних праздников</h1>
+
+                <p>
+                  Кто не мечтает провести новогоднюю ночь в шикарном ресторане с веселой программой и потрясающими
+                  новогодними декорациями?
+                </p>
+
+                <p>
+                  Наша компания владеет 16 залами для банкетов в г. Омске, где можно встретить новый год в тихом
+                  семейном кругу или организовать грандиозную новогоднюю вечеринку с друзьями...
+                </p>
+
+                <div class="services__page-wrapper">
+                  <div class="button_left">
+                    <button class="button">
+                      <p>Подробнее</p>
+                    </button>
+                  </div>
+
+                  <div class="button_right">
+                    <button class="button">
+                      <p>Заказать</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="services__page-img">
+                <img src="./assets/images/services-image/service-page-1.png" alt="service page image" />
+              </div>
+            </div>
+
+            <div class="services__page">
+              <div class="services__page-img">
+                <img src="./assets/images/services-image/service-page-2.png" alt="service page image" />
+              </div>
+
+              <div class="services__page-content">
+                <h1>Праздничный банкет</h1>
+
+                <p>
+                  Вы хотите заказать потрясающий фуршет или корпоратив, устроить грандиозный и незабываемый праздник с
+                  богатым столом и изысканными блюдами современной кухни?
+                </p>
+
+                <p>
+                  Мы с радостью осуществим ваши мечты и возьмём в свои руки все хлопоты по подготовке к торжественному
+                  событию.
+                </p>
+
+                <p>
+                  С большим количеством вкусных закусок ваши гости будут сытыми, а захватывающая атмосфера праздника
+                  будет дарить незабываемые и приятные эмоции каждому приглашённому.
+                </p>
+
+                <div class="services__page-wrapper">
+                  <div class="button_left">
+                    <button class="button">
+                      <p>Подробнее</p>
+                    </button>
+                  </div>
+
+                  <div class="button_right">
+                    <button class="button">
+                      <p>Заказать</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="services__page">
+              <div class="services__page-content">
+                <h1>Фуршет</h1>
+
+                <p>
+                  Если у вас в компании или дома намечается фуршет, то без профессиональной подготовки и навыков здесь
+                  точно не обойтись.
+                </p>
+
+                <p>
+                  Наша опытная команда организует фуршет на высшем уровне с учётом личных требований и возможностей.
+                </p>
+
+                <p>
+                  Ваш фуршет, который организован нашими сотрудниками – это сочетание делового стиля и современного
+                  вкуса.
+                </p>
+
+                <div class="services__page-wrapper">
+                  <div class="button_left">
+                    <button class="button">
+                      <p>Подробнее</p>
+                    </button>
+                  </div>
+
+                  <div class="button_right">
+                    <button class="button">
+                      <p>Заказать</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="services__page-img">
+                <img src="./assets/images/services-image/service-page-3.png" alt="service page image" />
+              </div>
+            </div>
+
+            <div class="services__page">
+              <div class="services__page-img">
+                <img src="./assets/images/services-image/service-page-4.png" alt="service page image" />
+              </div>
+
+              <div class="services__page-content">
+                <h1>Свадьба</h1>
+
+                <p>
+                  Свадьба – самое незабываемое и романтичное событие, которое наполнено любовью, позитивными эмоциями и
+                  переживаниями. Пара влюблённых мечтает, чтобы этот день запомнился на всю жизнь, а воспоминания
+                  остались самыми светлыми.
+                </p>
+
+                <p>
+                  Команда наших профессионалов с радостью и особым трепетом поможет воссоздать для вас свадьбу вашей
+                  мечты. Белоснежный интерьер и просторные залы, изумительный и...
+                </p>
+
+                <div class="services__page-wrapper">
+                  <div class="button_left">
+                    <button class="button">
+                      <p>Подробнее</p>
+                    </button>
+                  </div>
+
+                  <div class="button_right">
+                    <button class="button">
+                      <p>Заказать</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="services__page">
+              <div class="services__page-content">
+                <h1>Торты на заказ</h1>
+
+                <p>Торты от классических до авторских с эксклюзивным дизайном на заказ.</p>
+
+                <p>
+                  Мы изготавливаем эксклюзивные торты с дизайном по вашему эскизу. Повод может быть любой: день
+                  рождения, свадьба, корпоратив, выпускной, памятная дата и другие важные для вас события. Также вы
+                  можете выбрать уже готовый торт из нашего ассортимента.
+                </p>
+
+                <div class="services__page-wrapper">
+                  <div class="button_full">
+                    <button class="button">
+                      <p>Заказать</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="services__page-img">
+                <img src="./assets/images/services-image/service-page-5.png" alt="service page image" />
+              </div>
+            </div>
+
+            <div class="services__page">
+              <div class="services__page-img">
+                <img src="./assets/images/services-image/service-page-6.png" alt="service page image" />
+              </div>
+
+              <div class="services__page-content">
+                <h1>Детские праздники</h1>
+
+                <p>
+                  Вы хотите заказать потрясающий фуршет или корпоратив, устроить грандиозный и незабываемый праздник с
+                  богатым столом и изысканными блюдами современной кухни?
+                </p>
+
+                <p>
+                  Мы с радостью осуществим ваши мечты и возьмём в свои руки все хлопоты по подготовке к торжественному
+                  событию.
+                </p>
+
+                <p>
+                  С большим количеством вкусных закусок ваши гости будут сытыми, а захватывающая атмосфера праздника
+                  будет дарить незабываемые и приятные эмоции каждому приглашённому.
+                </p>
+
+                <div class="services__page-wrapper">
+                  <div class="button_full">
+                    <button class="button">
+                      <p>Заказать</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="services__page">
+              <div class="services__page-content">
+                <h1>Официальные мероприятия</h1>
+
+                <p>Торты от классических до авторских с эксклюзивным дизайном на заказ.</p>
+
+                <p>
+                  Мы изготавливаем эксклюзивные торты с дизайном по вашему эскизу. Повод может быть любой: день
+                  рождения, свадьба, корпоратив, выпускной, памятная дата и другие важные для вас события. Также вы
+                  можете выбрать уже готовый торт из нашего ассортимента.
+                </p>
+
+                <div class="services__page-wrapper">
+                  <div class="button_left">
+                    <button class="button">
+                      <p>Подробнее</p>
+                    </button>
+                  </div>
+
+                  <div class="button_right">
+                    <button class="button">
+                      <p>Заказать</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="services__page-img">
+                <img src="./assets/images/services-image/service-page-7.png" alt="service page image" />
+              </div>
+            </div>
+
+            <div class="services__page">
+              <div class="services__page-img">
+                <img src="./assets/images/services-image/service-page-8.png" alt="service page image" />
+              </div>
+
+              <div class="services__page-content">
+                <h1>Барбекю</h1>
+
+                <p>
+                  Вы хотите заказать потрясающий фуршет или корпоратив, устроить грандиозный и незабываемый праздник с
+                  богатым столом и изысканными блюдами современной кухни?
+                </p>
+
+                <p>
+                  Мы с радостью осуществим ваши мечты и возьмём в свои руки все хлопоты по подготовке к торжественному
+                  событию.
+                </p>
+
+                <p>
+                  С большим количеством вкусных закусок ваши гости будут сытыми, а захватывающая атмосфера праздника
+                  будет дарить незабываемые и приятные эмоции каждому приглашённому.
+                </p>
+
+                <div class="services__page-wrapper">
+                  <div class="button_left">
+                    <button class="button">
+                      <p>Подробнее</p>
+                    </button>
+                  </div>
+
+                  <div class="button_right">
+                    <button class="button">
+                      <p>Заказать</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -297,6 +585,4 @@
       </div>
     </footer>
   </body>
-
-  <script src="./assets/js/index.js"></script>
 </html>
