@@ -1,0 +1,131 @@
+.portfolio__page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 30px;
+}
+.portfolio__page .portfolio__page-title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+.portfolio__page .portfolio__page-title .title__line {
+  width: 83px;
+  height: 0px;
+  border: 1px solid var(--secondary-color);
+}
+.portfolio__page .portfolio__page-title p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 250;
+  font-size: 40px;
+  line-height: 150%;
+  color: var(--secondary-color);
+}
+.portfolio__page .portfolio__page-item {
+  display: flex;
+  padding: 0px;
+  gap: 30px;
+  width: 1440px;
+  height: 680px;
+}
+.portfolio__page .portfolio__page-item .left__block {
+  position: relative;
+  width: 400px;
+  height: 680px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.portfolio__page .portfolio__page-item .left__block img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+}
+.portfolio__page .portfolio__page-item .left__block img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.portfolio__page .portfolio__page-item .right__block {
+  display: flex;
+  width: 1010px;
+  height: 680px;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30px;
+  overflow: hidden;
+}
+.portfolio__page .portfolio__page-item .right__block .right__block-top,
+.portfolio__page .portfolio__page-item .right__block .right__block-bottom {
+  display: flex;
+  gap: 30px;
+  width: 1010px;
+  height: 325px;
+}
+.portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-1,
+.portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-2,
+.portfolio__page .portfolio__page-item .right__block .right__block-bottom .right__block-item-1,
+.portfolio__page .portfolio__page-item .right__block .right__block-bottom .right__block-item-2 {
+  position: relative;
+  overflow: hidden;
+}
+.portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-1 img,
+.portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-2 img,
+.portfolio__page .portfolio__page-item .right__block .right__block-bottom .right__block-item-1 img,
+.portfolio__page .portfolio__page-item .right__block .right__block-bottom .right__block-item-2 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.8;
+}
+.portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-1 img:hover,
+.portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-2 img:hover,
+.portfolio__page .portfolio__page-item .right__block .right__block-bottom .right__block-item-1 img:hover,
+.portfolio__page .portfolio__page-item .right__block .right__block-bottom .right__block-item-2 img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-1,
+.portfolio__page .portfolio__page-item .right__block .right__block-bottom .right__block-item-1 {
+  width: 400px;
+}
+.portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-2,
+.portfolio__page .portfolio__page-item .right__block .right__block-bottom .right__block-item-2 {
+  width: 580px;
+}
+.portfolio__page .portfolio__page-item .left__block .icon,
+.portfolio__page .portfolio__page-item .right__block-item-1 .icon,
+.portfolio__page .portfolio__page-item .right__block-item-2 .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  background-image: url("../images/zoom-in.png");
+  background-size: cover;
+  filter: invert(100%) brightness(100%);
+  opacity: 0;
+  cursor: pointer;
+}
+.portfolio__page .portfolio__page-item .left__block:hover .icon,
+.portfolio__page .portfolio__page-item .right__block-item-1:hover .icon,
+.portfolio__page .portfolio__page-item .right__block-item-2:hover .icon {
+  opacity: 0.6;
+}
+.portfolio__page .portfolio__page-item .left__block:hover img,
+.portfolio__page .portfolio__page-item .right__block-item-1:hover img,
+.portfolio__page .portfolio__page-item .right__block-item-2:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.reverse__element {
+  flex-direction: row-reverse;
+}/*# sourceMappingURL=portfolio-page-styles.css.map */
