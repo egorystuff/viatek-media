@@ -104,8 +104,13 @@ body {
   border-bottom: 1px solid #122d3b;
 }
 
+.padding__bottom_none {
+  padding-bottom: 0;
+}
+
 // MAIN-CONTENT---------------------------------------------------------------------------------------------
 // HEADER-------------------------------------------------------------
+
 .header__absolute {
   position: absolute;
   top: 0;
@@ -373,6 +378,7 @@ body {
 }
 
 // SLIDE-------------------------------------------------------------
+
 .bg-img__slide {
   max-width: 1920px;
   max-height: 1000px;
@@ -547,6 +553,7 @@ body {
 }
 
 // TITLE-------------------------------------------------------------
+
 .title {
   .title__subtitle {
     display: flex;
@@ -673,6 +680,7 @@ body {
 }
 
 // ABOUT-------------------------------------------------------------
+
 .about {
   position: relative;
   height: 860px;
@@ -742,6 +750,7 @@ body {
 }
 
 // PRICE-------------------------------------------------------------
+
 .price__block {
   .price__block-title {
     height: 70px;
@@ -974,6 +983,7 @@ body {
 }
 
 // PORTFOLIO-------------------------------------------------------------
+
 .portfolio {
   display: flex;
   padding: 0px;
@@ -1123,6 +1133,7 @@ body {
 }
 
 //REVIEW-------------------------------------------------------------
+
 .reviews__title {
   display: flex;
   flex-direction: row;
@@ -1399,4 +1410,213 @@ body {
   z-index: 10;
 }
 
-//--------------------------------------------------------------
+// NAVIGATION--------------------------------------------------------------
+
+.navigation {
+  margin-top: 50px;
+  .navigation__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 10px;
+
+    max-width: 1440px;
+
+    .navigation__list-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 10px;
+
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid #192f3a;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: var(--secondary-color);
+        a {
+          color: var(--main-bg-color);
+        }
+      }
+
+      a {
+        font-family: "Mplus 1p";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 25px;
+      }
+    }
+  }
+}
+
+// PAGINATION--------------------------------------------------------------
+
+.pagination {
+  margin-top: 150px;
+  .pagination__list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+
+    max-width: 1440px;
+    height: 38px;
+
+    .prev,
+    .next,
+    .page-num {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px 15px;
+      gap: 10px;
+
+      background: #112630;
+      border-radius: 5px;
+
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 18px;
+      text-transform: uppercase;
+
+      color: var(--secondary-color);
+
+      cursor: pointer;
+
+      transition: all 0.3s ease-in-out; //anima
+
+      &:hover {
+        background: var(--secondary-color);
+        color: var(--main-text-color);
+      }
+
+      &.active {
+        background: var(--secondary-color);
+        color: var(--main-text-color);
+      }
+    }
+  }
+}
+
+// FEEDBACK MODAL--------------------------------------------------------------
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.modal-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 50px;
+  gap: 30px;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 1284px;
+  background: var(--main-bg-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  .close {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+
+    width: 100%;
+    height: 54px;
+
+    .close-button {
+      cursor: pointer;
+    }
+  }
+
+  h2 {
+    width: 400px;
+    height: 47px;
+
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 40px;
+    line-height: 47px;
+
+    color: var(--main-text-color);
+  }
+
+  .feedback__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 50px;
+    width: 100%;
+
+    .feedback__form-item {
+      width: 100%;
+      input {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 100%;
+
+        padding: 20px 0;
+        width: 100%;
+
+        border: none;
+        border-bottom: 1px solid #7095aa;
+        color: var(--main-text-color);
+        background-color: var(--main-bg-color);
+
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid var(--secondary-color);
+          color: var(--secondary-color);
+        }
+      }
+
+      textarea {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 100%;
+        padding: 20px;
+
+        width: 100%;
+        height: 223px;
+        background: #112630;
+        border: 1px solid #7095aa;
+        border-radius: 5px;
+        resize: none;
+        overflow-y: auto;
+
+        color: var(--main-text-color);
+
+        &:focus {
+          outline: none;
+          border: 2px solid var(--secondary-color);
+          color: var(--secondary-color);
+        }
+      }
+    }
+  }
+}

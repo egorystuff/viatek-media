@@ -85,3 +85,23 @@ nextButton.addEventListener("click", () => {
     slideContainer.classList.remove("slide-out-right");
   }, 300);
 });
+
+//feedback-modal
+//-------------------------------------------------------------------------------------
+
+const feedbackModal = document.getElementById("feedback-modal");
+const feedbackButton = document.querySelector(".button");
+
+feedbackButton.addEventListener("click", () => {
+  feedbackModal.style.display = "block";
+});
+
+feedbackModal.addEventListener("click", (e) => {
+  if (e.target === feedbackModal) {
+    feedbackModal.style.display = "none";
+  }
+});
+
+document.getElementById("feedback-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+});
