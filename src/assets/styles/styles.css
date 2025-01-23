@@ -339,226 +339,6 @@
   border-radius: 5px;
 }
 
-.contacts__page {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 100px;
-  margin-bottom: 100px;
-}
-.contacts__page .contacts__info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 50px;
-  width: 47%;
-  height: auto;
-}
-.contacts__page .contacts__info .contacts__info-item {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 20px;
-}
-.contacts__page .contacts__info .contacts__info-item .contacts__info-title {
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 200;
-  font-size: 40px;
-  line-height: 47px;
-  color: var(--secondary-color);
-}
-.contacts__page .contacts__info .contacts__info-item .contacts__info-text {
-  font-family: "Mplus 1p";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 150%;
-}
-.contacts__page .contacts__info .contacts__info-item .contacts__info-phones p {
-  font-family: "Mplus 1p";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 60px;
-  line-height: 150%;
-}
-.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 20px;
-}
-.contacts__page .contacts__request {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 30px;
-  width: 46.5%;
-  height: auto;
-}
-.contacts__page .contacts__request .contacts__request-title {
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 200;
-  font-size: 40px;
-  line-height: 47px;
-  background-color: transparent;
-  color: var(--secondary-color);
-}
-.contacts__page .contacts__request .contacts__request-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 30px;
-  width: 100%;
-}
-.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item {
-  width: 100%;
-}
-.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item input {
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 100%;
-  padding: 20px 0;
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid #7095aa;
-  color: var(--main-text-color);
-  background-color: var(--main-bg-color);
-}
-.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item input:focus {
-  outline: none;
-  border-bottom: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
-}
-.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item textarea {
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 100%;
-  padding: 20px;
-  width: 100%;
-  height: 127px;
-  background: #112630;
-  border: 1px solid #7095aa;
-  border-radius: 5px;
-  resize: none;
-  overflow-y: auto;
-  color: var(--main-text-color);
-}
-.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item textarea:focus {
-  outline: none;
-  border: 2px solid var(--secondary-color);
-  color: var(--secondary-color);
-}
-.contacts__page .contacts__request .contacts__request-checkbox {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-.contacts__page .contacts__request .contacts__request-checkbox input {
-  width: 24px;
-  height: 24px;
-}
-.contacts__page .contacts__request .contacts__request-checkbox label {
-  font-family: "Raleway";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 100%;
-}
-.contacts__page .contacts__request .contacts__request-button {
-  width: 100%;
-  height: 70px;
-  border-radius: 5px;
-}
-.contacts__page .contacts__request .contacts__request-button .button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Mplus 1p";
-  font-weight: 800;
-  font-size: 12px;
-  width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  cursor: pointer;
-  color: var(--main-text-color);
-  text-transform: uppercase;
-  transition: all 0.7s;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-}
-.contacts__page .contacts__request .contacts__request-button .button:after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--secondary-color);
-  z-index: -2;
-}
-.contacts__page .contacts__request .contacts__request-button .button:before {
-  content: "";
-  position: absolute;
-  bottom: -1200px;
-  left: 50%;
-  transform: translate(-50%);
-  width: 0px;
-  height: 2000px;
-  border-radius: 50%;
-  background-color: var(--main-text-color);
-  transition: all 0.7s;
-  z-index: -1;
-}
-.contacts__page .contacts__request .contacts__request-button .button:hover {
-  color: var(--secondary-color);
-}
-.contacts__page .contacts__request .contacts__request-button .button:hover:before {
-  height: 2000px;
-  width: 2000px;
-}
-.contacts__page .contacts__request .contacts__request-button .button p {
-  font-family: "Mplus 1p";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
-  text-transform: uppercase;
-}
-.contacts__page .contacts__request .contacts__request-policy {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 31px;
-}
-.contacts__page .contacts__request .contacts__request-policy .contacts__request-policy-text {
-  color: var(--secondary-color);
-}
-
-.map {
-  margin-top: 0;
-}
-.map img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 .portfolio__page {
   display: flex;
   flex-direction: column;
@@ -891,6 +671,13 @@ body {
   display: flex;
   width: 231px;
   height: 40px;
+  align-items: center;
+  cursor: pointer;
+}
+.top__header .right .phone li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 .top__header .right .phone p {
   display: flex;
@@ -901,12 +688,43 @@ body {
   align-items: center;
 }
 .top__header .right .phone .phone__arrow {
+  display: flex;
   width: 24px;
   height: 24px;
-  cursor: pointer;
+  margin-left: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.top__header .right .phone:hover .dropdown-menu {
+  pointer-events: all;
+  opacity: 1;
+}
+.top__header .right .phone:hover .phone__arrow {
+  transform: rotate(180deg);
+  color: var(--secondary-color);
+}
+.top__header .right .phone .dropdown-menu {
+  opacity: 0;
   position: absolute;
-  top: 8px;
-  right: 0px;
+  top: 100%;
+  padding: 20px;
+  right: 0;
+  background: #122d3b;
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+  z-index: 1;
+  pointer-events: none;
+}
+.top__header .right .phone .dropdown-menu li {
+  min-width: 240px;
+  height: auto;
+  margin-bottom: 20px;
+}
+.top__header .right .phone .dropdown-menu li:last-child {
+  margin-bottom: 0px;
+}
+.top__header .right .phone .dropdown-menu li:hover a {
+  color: var(--secondary-color);
 }
 .top__header .right .button-wrapper {
   width: 151px;
@@ -1343,6 +1161,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+}
+.services__block .services__block-item {
+  cursor: pointer;
 }
 .services__block .services__block-item.base {
   position: relative;
@@ -2821,4 +2642,259 @@ body {
   outline: none;
   border: 2px solid var(--secondary-color);
   color: var(--secondary-color);
+}
+
+.contacts__page {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 100px;
+  margin-bottom: 100px;
+}
+.contacts__page .contacts__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 50px;
+  width: 47%;
+  height: auto;
+}
+.contacts__page .contacts__info .contacts__info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-title {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 40px;
+  line-height: 47px;
+  color: var(--secondary-color);
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-text {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 150%;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-phones p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 150%;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 20px;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers .socials__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers .icon-wt-color:hover {
+  background-color: #25d366;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers .icon-wt-color:hover svg path {
+  fill: var(--main-text-color);
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers .icon-tg-color:hover {
+  background-color: #24a1de;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers .icon-tg-color:hover svg path {
+  fill: var(--main-text-color);
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers .icon-vk-color:hover {
+  background-color: #4c75a3;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers .icon-vk-color:hover svg path {
+  fill: var(--main-text-color);
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers .icon-od-color:hover {
+  background-color: #ff9800;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-messengers .icon-od-color:hover svg path {
+  fill: var(--main-text-color);
+}
+.contacts__page .contacts__request {
+  display: flex;
+  flex-direction: column;
+  padding: 0px;
+  gap: 30px;
+  width: 46.5%;
+  height: auto;
+}
+.contacts__page .contacts__request .contacts__request-title {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 40px;
+  line-height: 47px;
+  background-color: transparent;
+  color: var(--secondary-color);
+}
+.contacts__page .contacts__request .contacts__request-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 30px;
+  width: 100%;
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item {
+  width: 100%;
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item input {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  padding: 20px 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #7095aa;
+  color: var(--main-text-color);
+  background-color: var(--main-bg-color);
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item input:focus {
+  outline: none;
+  border-bottom: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item textarea {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+  padding: 20px;
+  width: 100%;
+  height: 127px;
+  background: #112630;
+  border: 1px solid #7095aa;
+  border-radius: 5px;
+  resize: none;
+  overflow-y: auto;
+  color: var(--main-text-color);
+}
+.contacts__page .contacts__request .contacts__request-form .contacts__request-form-item textarea:focus {
+  outline: none;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+.contacts__page .contacts__request .contacts__request-checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.contacts__page .contacts__request .contacts__request-checkbox input {
+  width: 24px;
+  height: 24px;
+}
+.contacts__page .contacts__request .contacts__request-checkbox label {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+}
+.contacts__page .contacts__request .contacts__request-button {
+  width: 100%;
+  height: 70px;
+  border-radius: 5px;
+}
+.contacts__page .contacts__request .contacts__request-button .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mplus 1p";
+  font-weight: 800;
+  font-size: 12px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  cursor: pointer;
+  color: var(--main-text-color);
+  text-transform: uppercase;
+  transition: all 0.7s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.contacts__page .contacts__request .contacts__request-button .button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--secondary-color);
+  z-index: -2;
+}
+.contacts__page .contacts__request .contacts__request-button .button:before {
+  content: "";
+  position: absolute;
+  bottom: -1200px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 0px;
+  height: 2000px;
+  border-radius: 50%;
+  background-color: var(--main-text-color);
+  transition: all 0.7s;
+  z-index: -1;
+}
+.contacts__page .contacts__request .contacts__request-button .button:hover {
+  color: var(--secondary-color);
+}
+.contacts__page .contacts__request .contacts__request-button .button:hover:before {
+  height: 2000px;
+  width: 2000px;
+}
+.contacts__page .contacts__request .contacts__request-button .button p {
+  font-family: "Mplus 1p";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+.contacts__page .contacts__request .contacts__request-policy {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 31px;
+}
+.contacts__page .contacts__request .contacts__request-policy .contacts__request-policy-icon {
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+.contacts__page .contacts__request .contacts__request-policy .contacts__request-policy-text {
+  color: var(--secondary-color);
+}
+
+.map {
+  margin-top: 0;
+}
+.map img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=styles.css.map */
