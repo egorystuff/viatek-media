@@ -63,6 +63,7 @@
       align-items: flex-start;
       flex-direction: column;
       gap: 30px;
+
       overflow: hidden;
 
       .right__block-top,
@@ -77,6 +78,7 @@
         .right__block-item-2 {
           position: relative;
           overflow: hidden;
+          border-radius: 5px;
 
           img {
             width: 100%;

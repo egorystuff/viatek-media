@@ -72,6 +72,7 @@
 .portfolio__page .portfolio__page-item .right__block .right__block-bottom .right__block-item-2 {
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
 }
 .portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-1 img,
 .portfolio__page .portfolio__page-item .right__block .right__block-top .right__block-item-2 img,

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./assets/styles/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <title>Viatek media | Главная</title>
   </head>
   <body>
@@ -786,25 +787,45 @@
           <div class="content" style="padding-top: 0">
             <div class="portfolio">
               <div class="portfolio__block">
-                <div class="portfolio__block-item">
+                <a
+                  class="portfolio__block-item"
+                  data-fancybox="gallery"
+                  href="./assets/images/portfolio/portfolio-1.png">
                   <img src="./assets/images/portfolio/portfolio-1.png" alt="Портфолио" />
-                </div>
+                  <span class="icon"></span>
+                </a>
 
-                <div class="portfolio__block-item">
+                <a
+                  class="portfolio__block-item"
+                  data-fancybox="gallery"
+                  href="./assets/images/portfolio/portfolio-2.png">
                   <img src="./assets/images/portfolio/portfolio-2.png" alt="Портфолио" />
-                </div>
+                  <span class="icon"></span>
+                </a>
 
-                <div class="portfolio__block-item">
+                <a
+                  class="portfolio__block-item"
+                  data-fancybox="gallery"
+                  href="./assets/images/portfolio/portfolio-3.png">
                   <img src="./assets/images/portfolio/portfolio-3.png" alt="Портфолио" />
-                </div>
+                  <span class="icon"></span>
+                </a>
 
-                <div class="portfolio__block-item">
+                <a
+                  class="portfolio__block-item"
+                  data-fancybox="gallery"
+                  href="./assets/images/portfolio/portfolio-4.png">
                   <img src="./assets/images/portfolio/portfolio-4.png" alt="Портфолио" />
-                </div>
+                  <span class="icon"></span>
+                </a>
 
-                <div class="portfolio__block-item">
+                <a
+                  class="portfolio__block-item"
+                  data-fancybox="gallery"
+                  href="./assets/images/portfolio/portfolio-5.png">
                   <img src="./assets/images/portfolio/portfolio-5.png" alt="Портфолио" />
-                </div>
+                  <span class="icon"></span>
+                </a>
               </div>
             </div>
 
@@ -1106,4 +1127,9 @@
   </body>
 
   <script src="./assets/js/index.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+  <script>
+    Fancybox.bind('[data-fancybox="gallery"]', {});
+  </script>
 </html>
