@@ -9,7 +9,7 @@
   <body>
     <!-- Header -->
     <header class="header">
-      <div class="container bottom__line">
+      <div class="container">
         <div class="content">
           <div class="top__header">
             <div class="left">
@@ -97,7 +97,7 @@
               </div>
 
               <div class="button-wrapper">
-                <button class="button">Обратная связь</button>
+                <button class="button" id="feedback-button">Обратная связь</button>
               </div>
 
               <div class="socials">
@@ -192,6 +192,69 @@
         </div>
       </div>
     </header>
+
+    <!-- FEEDBACK MODAL -->
+    <div class="modal" id="feedback-modal">
+      <div class="modal__feedback-content">
+        <div class="close">
+          <button class="close-button">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.292893 0.292893C0.683417 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L7 5.58579L12.2929 0.292893C12.6834 -0.0976311 13.3166 -0.0976311 13.7071 0.292893C14.0976 0.683417 14.0976 1.31658 13.7071 1.70711L8.41421 7L13.7071 12.2929C14.0976 12.6834 14.0976 13.3166 13.7071 13.7071C13.3166 14.0976 12.6834 14.0976 12.2929 13.7071L7 8.41421L1.70711 13.7071C1.31658 14.0976 0.683417 14.0976 0.292893 13.7071C-0.0976311 13.3166 -0.0976311 12.6834 0.292893 12.2929L5.58579 7L0.292893 1.70711C-0.0976311 1.31658 -0.0976311 0.683417 0.292893 0.292893Z"
+                fill="#01C2FF" />
+            </svg>
+          </button>
+        </div>
+
+        <h2>Оставить заявку</h2>
+
+        <form class="feedback__form" id="feedback-form">
+          <div class="feedback__form-item">
+            <input type="text" placeholder="Ваше имя*" />
+          </div>
+          <div class="feedback__form-item">
+            <input type="text" placeholder="Ваш телефон*" />
+          </div>
+          <div class="feedback__form-item">
+            <input type="email" placeholder="Ваш e-mal*" />
+          </div>
+          <div class="feedback__form-item comment">
+            <textarea name="Комментарий" id="" placeholder="Комментарий"></textarea>
+          </div>
+        </form>
+
+        <checkbox class="feedback__checkbox">
+          <input type="checkbox" name="checkbox" id="checkbox" />
+          <label for="checkbox"
+            >Нажимая кнопку «Отправить», я принимаю соглашение сайта об обработке персональных данных.</label
+          >
+        </checkbox>
+
+        <div class="feedback__button">
+          <button class="button">
+            <p>Отправить заявку</p>
+          </button>
+        </div>
+
+        <div class="feedback__policy">
+          <div class="feedback__policy-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M25.0005 16.6667L18.3338 23.3334L15.0003 20M20.0003 5L6.66699 11.6667C6.66699 20.322 11.3075 32.5163 20.0003 35C28.6932 32.5163 33.3337 20.322 33.3337 11.6667L20.0003 5Z"
+                stroke="#01C2FF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </div>
+
+          <div class="feedback__policy-text">
+            Мы гарантируем безопасность введенных данных. Они используются только для связи с клиентом и не хранятся на
+            наших серверах
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Main content -->
     <main>
@@ -1159,4 +1222,5 @@
   </body>
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/nav.js"></script>
+  <script src="./assets/js/feedback-modal.js"></script>
 </html>
