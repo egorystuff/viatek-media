@@ -475,104 +475,111 @@ body {
   color: var(--main-text-color);
 }
 
-.slide {
+.swiper {
   position: relative;
   display: flex;
   max-width: 1920px;
   margin: 261px 0 50px 0;
 
-  .left__slide {
+  .swiper-wrapper {
     width: 75%;
-    .info__slide {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 50px;
-      margin-bottom: 100px;
+    .swiper-slide {
+      .info__slide {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+        margin-bottom: 100px;
 
-      .info__slide-title {
-        font-family: "Raleway";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 80px;
-        line-height: 94px;
-
-        color: var(--main-text-color);
-      }
-
-      .info__slide-subtitle {
-        font-family: "Raleway";
-        font-style: normal;
-        font-weight: 400;
-        font-size: 40px;
-        line-height: 47px;
-
-        color: var(--main-text-color);
-      }
-    }
-
-    .button__slide {
-      width: 232px;
-      height: 70px;
-      border-radius: 5px;
-      .button {
-        @include base_button(
-          300px,
-          var(--main-text-color),
-          var(--secondary-color),
-          var(--main-text-color),
-          var(--secondary-color)
-        );
-        p {
-          font-family: "Mplus 1p";
+        .info__slide-title {
+          font-family: "Raleway";
           font-style: normal;
-          font-weight: 500;
-          font-size: 20px;
+          font-weight: 400;
+          font-size: 80px;
+          line-height: 94px;
+
+          color: var(--main-text-color);
+        }
+
+        .info__slide-subtitle {
+          font-family: "Raleway";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 40px;
+          line-height: 47px;
+
+          color: var(--main-text-color);
         }
       }
     }
   }
 
+  .button__slide {
+    width: 232px;
+    height: 70px;
+    border-radius: 5px;
+    .button {
+      @include base_button(
+        300px,
+        var(--main-text-color),
+        var(--secondary-color),
+        var(--main-text-color),
+        var(--secondary-color)
+      );
+      p {
+        font-family: "Mplus 1p";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+  }
+
   .right__slide {
-    position: relative;
-    width: 25%;
-    .slide-pagination {
-      position: absolute;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    .slide__wrapper {
       display: flex;
       align-items: center;
       gap: 20px;
-      bottom: 0;
-      right: 0;
-    }
 
-    .slide-pagination-item {
-      width: 39px;
-      height: 29px;
-      font-family: "Raleway";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 25px;
-      line-height: 29px;
-      text-transform: uppercase;
+      .swiper-pagination {
+        position: static;
+        padding: 0;
+        margin: 0;
 
-      color: var(--main-text-color);
-    }
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 29px;
+        text-transform: uppercase;
 
-    .slide-control {
-      font-size: 24px;
-      align-items: center;
-      color: var(--main-text-color);
-      width: 64px;
-      height: 64px;
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 5px;
-      cursor: pointer;
+        color: var(--main-text-color);
+      }
 
-      transition: all 0.2s ease-in-out;
+      .swiper-button-prev,
+      .swiper-button-next {
+        position: static;
+        padding: 31px;
+        margin: 0;
+        border: none;
 
-      &:hover {
-        background: var(--secondary-color);
+        color: var(--main-text-color);
+        background: rgba(255, 255, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          background: var(--secondary-color);
+        }
+
+        &::after {
+          content: "";
+        }
       }
     }
   }
@@ -1607,7 +1614,8 @@ body {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 20;
+  overflow-y: scroll;
+  z-index: 9999;
 }
 
 .modal__feedback-content {
@@ -1845,7 +1853,8 @@ body {
     gap: 30px;
 
     .description {
-      p {
+      p,
+      li {
         font-family: "Mplus 1p";
         font-style: normal;
         margin-bottom: 20px;
@@ -1859,21 +1868,43 @@ body {
       }
     }
 
+    ul {
+      margin-left: 30px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    ul li::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: var(--secondary-color);
+    }
+
     .subtitle {
-      h2 {
-        font-family: "Mplus 1p";
-        font-style: normal;
-        font-weight: 500;
-        font-size: 30px;
-        line-height: 150%;
-        color: var(--secondary-color);
-      }
+      h2,
       h3 {
         font-family: "Mplus 1p";
         font-style: normal;
         font-weight: 500;
-        font-size: 25px;
         line-height: 150%;
+      }
+
+      h2 {
+        font-size: 30px;
+        color: var(--secondary-color);
+      }
+
+      h3 {
+        font-size: 25px;
         color: var(--title-color);
       }
     }

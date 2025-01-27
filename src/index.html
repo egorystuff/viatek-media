@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./assets/styles/styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
     <title>Viatek media | Главная</title>
   </head>
@@ -263,31 +264,66 @@
       <section>
         <div class="container__header">
           <div class="content">
-            <div class="slide">
-              <div class="left__slide">
-                <div class="info__slide">
-                  <div class="info__slide-title">
-                    Выездное <br />
-                    ресторанное<br />
-                    обслуживание
-                  </div>
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <!-- item -->
+                <div class="swiper-slide">
+                  <div class="info__slide">
+                    <div class="info__slide-title">
+                      Выездное <br />
+                      ресторанное<br />
+                      обслуживание
+                    </div>
 
-                  <div class="info__slide-subtitle">
-                    для событий любого масштаба <br />
-                    при любых условиях
+                    <div class="info__slide-subtitle">
+                      для событий любого масштаба <br />
+                      при любых условиях
+                    </div>
                   </div>
                 </div>
 
-                <div class="button__slide">
-                  <button class="button"><p>Узнать больше</p></button>
+                <!-- item -->
+                <div class="swiper-slide">
+                  <div class="info__slide">
+                    <div class="info__slide-title">
+                      Выездное <br />
+                      ресторанное<br />
+                      обслуживание
+                    </div>
+
+                    <div class="info__slide-subtitle">
+                      для событий любого масштаба <br />
+                      при любых условиях
+                    </div>
+                  </div>
+                </div>
+
+                <!-- item -->
+                <div class="swiper-slide">
+                  <div class="info__slide">
+                    <div class="info__slide-title">
+                      Выездное <br />
+                      ресторанное<br />
+                      обслуживание
+                    </div>
+
+                    <div class="info__slide-subtitle">
+                      для событий любого масштаба <br />
+                      при любых условиях
+                    </div>
+                  </div>
                 </div>
               </div>
 
+              <div class="button__slide">
+                <button class="button"><p>Узнать больше</p></button>
+              </div>
+
               <div class="right__slide">
-                <div class="slide-pagination">
-                  <div class="slide-pagination-item">1/3</div>
-                  <button class="slide-control prev">&#10094;</button>
-                  <button class="slide-control next">&#10095;</button>
+                <div class="slide__wrapper">
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-button-prev">&#10094;</div>
+                  <div class="swiper-button-next">&#10095;</div>
                 </div>
               </div>
             </div>
@@ -1135,8 +1171,24 @@
   <script src="./assets/js/index.js"></script>
   <script src="./assets/js/feedback-modal.js"></script>
 
+  <!-- fancybox -->
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
   <script>
     Fancybox.bind('[data-fancybox="gallery"]', {});
+  </script>
+
+  <!-- swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
   </script>
 </html>

@@ -928,23 +928,23 @@ body {
   color: var(--main-text-color);
 }
 
-.slide {
+.swiper {
   position: relative;
   display: flex;
   max-width: 1920px;
   margin: 261px 0 50px 0;
 }
-.slide .left__slide {
+.swiper .swiper-wrapper {
   width: 75%;
 }
-.slide .left__slide .info__slide {
+.swiper .swiper-wrapper .swiper-slide .info__slide {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 50px;
   margin-bottom: 100px;
 }
-.slide .left__slide .info__slide .info__slide-title {
+.swiper .swiper-wrapper .swiper-slide .info__slide .info__slide-title {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
@@ -952,7 +952,7 @@ body {
   line-height: 94px;
   color: var(--main-text-color);
 }
-.slide .left__slide .info__slide .info__slide-subtitle {
+.swiper .swiper-wrapper .swiper-slide .info__slide .info__slide-subtitle {
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
@@ -960,12 +960,12 @@ body {
   line-height: 47px;
   color: var(--main-text-color);
 }
-.slide .left__slide .button__slide {
+.swiper .button__slide {
   width: 232px;
   height: 70px;
   border-radius: 5px;
 }
-.slide .left__slide .button__slide .button {
+.swiper .button__slide .button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -984,7 +984,7 @@ body {
   z-index: 1;
   overflow: hidden;
 }
-.slide .left__slide .button__slide .button:after {
+.swiper .button__slide .button:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -994,7 +994,7 @@ body {
   background-color: var(--secondary-color);
   z-index: -2;
 }
-.slide .left__slide .button__slide .button:before {
+.swiper .button__slide .button:before {
   content: "";
   position: absolute;
   bottom: -100px;
@@ -1006,34 +1006,33 @@ body {
   transition: all 0.5s;
   z-index: -1;
 }
-.slide .left__slide .button__slide .button:hover {
+.swiper .button__slide .button:hover {
   color: var(--secondary-color);
 }
-.slide .left__slide .button__slide .button:hover:before {
+.swiper .button__slide .button:hover:before {
   height: 300px;
   width: 300px;
 }
-.slide .left__slide .button__slide .button p {
+.swiper .button__slide .button p {
   font-family: "Mplus 1p";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
 }
-.slide .right__slide {
-  position: relative;
-  width: 25%;
-}
-.slide .right__slide .slide-pagination {
+.swiper .right__slide {
   position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 20px;
   bottom: 0;
   right: 0;
 }
-.slide .right__slide .slide-pagination-item {
-  width: 39px;
-  height: 29px;
+.swiper .right__slide .slide__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.swiper .right__slide .slide__wrapper .swiper-pagination {
+  position: static;
+  padding: 0;
+  margin: 0;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 400;
@@ -1042,20 +1041,25 @@ body {
   text-transform: uppercase;
   color: var(--main-text-color);
 }
-.slide .right__slide .slide-control {
-  font-size: 24px;
-  align-items: center;
+.swiper .right__slide .slide__wrapper .swiper-button-prev,
+.swiper .right__slide .slide__wrapper .swiper-button-next {
+  position: static;
+  padding: 31px;
+  margin: 0;
+  border: none;
   color: var(--main-text-color);
-  width: 64px;
-  height: 64px;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 5px;
-  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.slide .right__slide .slide-control:hover {
+.swiper .right__slide .slide__wrapper .swiper-button-prev:hover,
+.swiper .right__slide .slide__wrapper .swiper-button-next:hover {
   background: var(--secondary-color);
+}
+.swiper .right__slide .slide__wrapper .swiper-button-prev::after,
+.swiper .right__slide .slide__wrapper .swiper-button-next::after {
+  content: "";
 }
 
 .title .title__subtitle {
@@ -2521,7 +2525,8 @@ body {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
-  z-index: 20;
+  overflow-y: scroll;
+  z-index: 9999;
 }
 
 .modal__feedback-content {
@@ -2768,7 +2773,8 @@ body {
   padding: 50px;
   gap: 30px;
 }
-.modal__details-content .modal__details-info .description p {
+.modal__details-content .modal__details-info .description p,
+.modal__details-content .modal__details-info .description li {
   font-family: "Mplus 1p";
   font-style: normal;
   margin-bottom: 20px;
@@ -2780,20 +2786,37 @@ body {
 .modal__details-content .modal__details-info .description:last-child {
   margin-bottom: 0;
 }
-.modal__details-content .modal__details-info .subtitle h2 {
-  font-family: "Mplus 1p";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 30px;
-  line-height: 150%;
-  color: var(--secondary-color);
+.modal__details-content .modal__details-info ul {
+  margin-left: 30px;
 }
+.modal__details-content .modal__details-info ul li {
+  position: relative;
+  padding-left: 20px;
+}
+.modal__details-content .modal__details-info ul li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+}
+.modal__details-content .modal__details-info .subtitle h2,
 .modal__details-content .modal__details-info .subtitle h3 {
   font-family: "Mplus 1p";
   font-style: normal;
   font-weight: 500;
-  font-size: 25px;
   line-height: 150%;
+}
+.modal__details-content .modal__details-info .subtitle h2 {
+  font-size: 30px;
+  color: var(--secondary-color);
+}
+.modal__details-content .modal__details-info .subtitle h3 {
+  font-size: 25px;
   color: var(--title-color);
 }
 
