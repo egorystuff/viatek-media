@@ -399,7 +399,7 @@ body {
         }
       }
 
-      // добавляем выпадающее меню
+      // Стили для выпадающего меню
       .dropdown-menu {
         opacity: 0;
         position: absolute;
@@ -458,6 +458,73 @@ body {
           &:before {
             transform: translate(-50%, -10px);
             background-color: var(--secondary-color);
+          }
+        }
+      }
+
+      // Стили для бургер-меню
+      &.burger-menu {
+        display: block; // По умолчанию скрываем бургер-меню
+        cursor: pointer;
+        padding: 0;
+
+        .burger-icon {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          width: 24px;
+          height: 18px;
+
+          span {
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            transition: all 0.3s ease;
+          }
+        }
+
+        &:hover {
+          .burger-icon span {
+            background-color: var(--secondary-color);
+          }
+        }
+      }
+    }
+  }
+
+  // Медиа-запрос для мобильных устройств
+  @media (max-width: 768px) {
+    .nav-header__list {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+
+      .nav-header__list-item {
+        display: none; // Скрываем все пункты меню на мобильных устройствах
+
+        &.burger-menu {
+          display: block; // Показываем бургер-меню
+        }
+      }
+
+      // Стили для активного состояния меню (когда бургер-меню открыто)
+      &.active {
+        flex-direction: column;
+        align-items: flex-start;
+        background: #122d3b;
+        padding: 20px;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+
+        .nav-header__list-item {
+          display: block;
+          width: 100%;
+          padding: 10px 0;
+
+          &.burger-menu {
+            display: none; // Скрываем бургер-меню при открытом меню
           }
         }
       }

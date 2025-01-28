@@ -189,6 +189,15 @@
               <li class="nav-header__list-item hidden" onclick="location.href='contacts.html'">
                 <a href="contacts.html">Контакты</a>
               </li>
+
+              <!-- Бургер-меню -->
+              <li class="nav-header__list-item burger-menu" onclick="toggleMenu()">
+                <div class="burger-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </li>
             </ul>
           </nav>
         </div>
@@ -1190,5 +1199,12 @@
         prevEl: ".swiper-button-prev",
       },
     });
+  </script>
+
+  <script>
+    function toggleMenu() {
+      const navList = document.querySelector(".nav-header__list");
+      navList.classList.toggle("active");
+    }
   </script>
 </html>
