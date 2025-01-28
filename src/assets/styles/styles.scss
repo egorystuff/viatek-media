@@ -1610,12 +1610,18 @@ body {
   display: none;
   position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
   overflow-y: scroll;
   z-index: 9999;
+
+  transition: right 0.5s ease-in-out;
+
+  &.open {
+    right: 0;
+  }
 }
 
 .modal__feedback-content {
@@ -1906,6 +1912,28 @@ body {
       h3 {
         font-size: 25px;
         color: var(--title-color);
+      }
+    }
+
+    .button-wrapper {
+      width: 196px;
+      height: 70px;
+      border-radius: 5px;
+      .button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        @include base_button(350px, $color: var(--main-text-color));
+
+        p {
+          font-family: "Mplus 1p";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 30px;
+          text-transform: none;
+        }
       }
     }
   }
