@@ -59,6 +59,8 @@ overlay.addEventListener("click", () => {
 });
 
 // Функция для копирования пунктов меню
+// -------------------------------------------------------------------------------------
+
 function copyMenuItems() {
   // Находим все пункты меню в nav-header__list, кроме кнопки бургер-меню
   const navItems = document.querySelectorAll(".nav-header__list-item:not(.burger-menu)");

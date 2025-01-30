@@ -15,6 +15,7 @@
   --main-text-color: #ffffff;
   --secondary-text-color: #112630;
   --main-bg-color: #0b1b23;
+  --secondary-bg-color: #122d3b;
   --secondary-color: #2cb4fe;
   --primary-color: #9747ff;
   --title-color: #7095aa;
@@ -506,7 +507,7 @@ body {
     background-color: var(--main-bg-color);
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     transition: right 0.3s ease;
-    z-index: 1000;
+    z-index: 50;
 
     &.open {
       right: 0;
@@ -541,22 +542,89 @@ body {
 
     .burger-modal-content {
       .burger-menu-list {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 30px;
+        margin: 50px 0;
         .burger-menu-item {
-          padding: 12px 16px;
-          border-bottom: 1px solid #e0e0e0; // Разделительная линия
-
+          width: 100%;
+          height: 34px;
+          margin-left: 50px;
           a {
-            text-decoration: none;
+            display: flex;
+            font-family: "Mplus 1p";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 22px;
+            text-transform: uppercase;
             color: var(--main-text-color);
-            font-size: 16px;
             transition: color 0.3s ease;
 
             &:hover {
-              color: #7095aa; // Эффект при наведении
+              color: var(--secondary-color);
+            }
+          }
+        }
+      }
+
+      .burger-footer {
+        width: 100%;
+        background-color: var(--secondary-bg-color);
+
+        .burder-wrapper {
+          border: 1px solid #7095aa;
+          display: flex;
+          width: 75%;
+          margin: 0 auto;
+          flex-direction: column;
+          gap: 30px;
+
+          .burder-address {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            svg {
+              width: 24px;
+              height: 24px;
+            }
+
+            p {
+              font-family: "Mplus 1p";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 15px;
+              line-height: 22px;
+            }
+          }
+
+          .burder-phone {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+            p {
+              font-family: "Mplus 1p";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 20px;
+              line-height: 30px;
+            }
+          }
+
+          .burder-button {
+            width: 100%;
+            height: 48px;
+            border-radius: 5px;
+            .button {
+              @include base_button(420px, var(--main-text-color), var(--secondary-color));
             }
           }
         }
@@ -575,7 +643,7 @@ body {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 999;
+    z-index: 20;
 
     &.active {
       opacity: 1;
