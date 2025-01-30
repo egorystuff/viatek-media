@@ -796,11 +796,17 @@ body {
   border-radius: 5px;
   transition: all 0.2s ease-in-out;
 }
+.top__header .right .socials .socials__link .icon-wt-color {
+  color: #7095aa;
+}
 .top__header .right .socials .socials__link .icon-wt-color:hover {
   background-color: #25d366;
 }
 .top__header .right .socials .socials__link .icon-wt-color:hover svg path {
   fill: var(--main-text-color);
+}
+.top__header .right .socials .socials__link .icon-tg-color {
+  color: #7095aa;
 }
 .top__header .right .socials .socials__link .icon-tg-color:hover {
   background-color: #24a1de;
@@ -808,11 +814,17 @@ body {
 .top__header .right .socials .socials__link .icon-tg-color:hover svg path {
   fill: var(--main-text-color);
 }
+.top__header .right .socials .socials__link .icon-vk-color {
+  color: #7095aa;
+}
 .top__header .right .socials .socials__link .icon-vk-color:hover {
   background-color: #4c75a3;
 }
 .top__header .right .socials .socials__link .icon-vk-color:hover svg path {
   fill: var(--main-text-color);
+}
+.top__header .right .socials .socials__link .icon-od-color {
+  color: #7095aa;
 }
 .top__header .right .socials .socials__link .icon-od-color:hover {
   background-color: #ff9800;
@@ -1014,9 +1026,9 @@ body {
   background-color: var(--secondary-bg-color);
 }
 .nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper {
-  border: 1px solid #7095aa;
   display: flex;
   width: 75%;
+  height: 750px;
   margin: 0 auto;
   flex-direction: column;
   gap: 30px;
@@ -1025,6 +1037,7 @@ body {
   display: flex;
   gap: 10px;
   align-items: center;
+  margin-top: 30px;
 }
 .nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-address svg {
   width: 24px;
@@ -1105,6 +1118,64 @@ body {
 .nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-button .button:hover:before {
   height: 420px;
   width: 420px;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  transition: all ease-in-out 0.2s;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .socials__icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-wt-color {
+  color: #25d366;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-wt-color:hover {
+  background-color: #25d366;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-wt-color:hover svg path {
+  fill: var(--main-text-color);
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-tg-color {
+  color: #24a1de;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-tg-color:hover {
+  background-color: #24a1de;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-tg-color:hover svg path {
+  fill: var(--main-text-color);
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-vk-color {
+  color: #4c75a3;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-vk-color:hover {
+  background-color: #4c75a3;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-vk-color:hover svg path {
+  fill: var(--main-text-color);
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-od-color {
+  color: #ff9800;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-od-color:hover {
+  background-color: #ff9800;
+}
+.nav-header .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social .socials__link .icon-od-color:hover svg path {
+  fill: var(--main-text-color);
 }
 .nav-header .overlay {
   position: fixed;

@@ -311,6 +311,7 @@ body {
         }
 
         .icon-wt-color {
+          color: #7095aa;
           &:hover {
             background-color: #25d366;
             svg path {
@@ -320,6 +321,7 @@ body {
         }
 
         .icon-tg-color {
+          color: #7095aa;
           &:hover {
             background-color: #24a1de;
             svg path {
@@ -329,6 +331,7 @@ body {
         }
 
         .icon-vk-color {
+          color: #7095aa;
           &:hover {
             background-color: #4c75a3;
             svg path {
@@ -338,6 +341,7 @@ body {
         }
 
         .icon-od-color {
+          color: #7095aa;
           &:hover {
             background-color: #ff9800;
             svg path {
@@ -575,9 +579,9 @@ body {
         background-color: var(--secondary-bg-color);
 
         .burder-wrapper {
-          border: 1px solid #7095aa;
           display: flex;
           width: 75%;
+          height: 750px;
           margin: 0 auto;
           flex-direction: column;
           gap: 30px;
@@ -586,6 +590,7 @@ body {
             display: flex;
             gap: 10px;
             align-items: center;
+            margin-top: 30px;
 
             svg {
               width: 24px;
@@ -625,6 +630,70 @@ body {
             border-radius: 5px;
             .button {
               @include base_button(420px, var(--main-text-color), var(--secondary-color));
+            }
+          }
+
+          .burder-social {
+            display: flex;
+            justify-content: space-between;
+            .socials__link {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 40px;
+              height: 40px;
+              border-radius: 5px;
+              transition: all ease-in-out 0.2s;
+
+              .socials__icon {
+                display: flex;
+                width: 40px;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+                transition: all 0.2s ease-in-out;
+              }
+
+              .icon-wt-color {
+                color: #25d366;
+                &:hover {
+                  background-color: #25d366;
+                  svg path {
+                    fill: var(--main-text-color);
+                  }
+                }
+              }
+
+              .icon-tg-color {
+                color: #24a1de;
+                &:hover {
+                  background-color: #24a1de;
+                  svg path {
+                    fill: var(--main-text-color);
+                  }
+                }
+              }
+
+              .icon-vk-color {
+                color: #4c75a3;
+                &:hover {
+                  background-color: #4c75a3;
+                  svg path {
+                    fill: var(--main-text-color);
+                  }
+                }
+              }
+
+              .icon-od-color {
+                color: #ff9800;
+                &:hover {
+                  background-color: #ff9800;
+                  svg path {
+                    fill: var(--main-text-color);
+                  }
+                }
+              }
             }
           }
         }
