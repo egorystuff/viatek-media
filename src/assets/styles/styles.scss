@@ -381,6 +381,14 @@ body {
       position: relative;
       cursor: pointer;
 
+      @media (max-width: 1024px) {
+        display: none; // Скрываем обычные пункты меню на планшетах и мобильных устройствах
+
+        &.burger-menu {
+          display: flex; // Показываем только бургер-меню
+        }
+      }
+
       .dropdown-link {
         display: flex;
         align-items: center;
@@ -470,13 +478,16 @@ body {
   }
 
   // Стили для кнопки бургер-меню
-  // Стили для кнопки бургер-меню
   .burger-menu {
     cursor: pointer;
-    display: flex;
+    display: none; // По умолчанию скрываем бургер-меню
     align-items: center;
     justify-content: center;
     padding: 10px;
+
+    @media (max-width: 1024px) {
+      display: flex; // Показываем на планшетах и мобильных устройствах
+    }
 
     .burger-icon {
       display: flex;
@@ -717,6 +728,324 @@ body {
     &.active {
       opacity: 1;
       visibility: visible;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .header__absolute {
+    background: rgba(11, 27, 35, 0.9); // Убираем градиент для лучшей читаемости
+  }
+
+  .top__header {
+    height: auto;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .left {
+      flex-direction: column;
+      gap: 10px;
+      height: auto;
+
+      .logo {
+        gap: 10px;
+        height: auto;
+
+        .logo-img {
+          width: 50px;
+          height: 50px;
+
+          .logo-img__text {
+            font-size: 24px;
+          }
+        }
+
+        .logo-text {
+          width: auto;
+
+          .logo-text__title {
+            font-size: 24px;
+          }
+
+          .logo-text__subtitle {
+            font-size: 14px;
+          }
+        }
+      }
+
+      .line {
+        display: none; // Убираем линию на планшетах
+      }
+
+      .address {
+        height: auto;
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .right {
+      flex-direction: column;
+      gap: 10px;
+      height: auto;
+      align-items: flex-start;
+
+      .phone {
+        width: 100%;
+        justify-content: space-between;
+
+        p {
+          font-size: 18px;
+        }
+
+        .dropdown-menu {
+          width: 100%;
+          right: auto;
+          left: 0;
+        }
+      }
+
+      .button-wrapper {
+        width: 100%;
+        .button {
+          width: 100%;
+        }
+      }
+
+      .socials {
+        gap: 10px;
+      }
+    }
+  }
+
+  .nav-header {
+    height: auto;
+    margin-top: 20px;
+    padding: 10px;
+
+    .nav-header__list {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+
+      .nav-header__list-item {
+        padding: 10px;
+        font-size: 14px;
+
+        .dropdown-menu {
+          position: static;
+          opacity: 1;
+          pointer-events: all;
+          background: none;
+          padding: 0;
+          margin-top: 10px;
+
+          li {
+            margin-bottom: 10px;
+          }
+        }
+      }
+
+      .burger-menu {
+        display: flex; // Показываем бургер-меню
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header__absolute {
+    background: rgba(11, 27, 35, 0.95); // Еще более плотный фон для мобильных устройств
+  }
+
+  .top__header {
+    padding: 10px;
+
+    .left {
+      .logo {
+        .logo-img {
+          width: 40px;
+          height: 40px;
+
+          .logo-img__text {
+            font-size: 20px;
+          }
+        }
+
+        .logo-text {
+          .logo-text__title {
+            font-size: 20px;
+          }
+
+          .logo-text__subtitle {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .address {
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .right {
+      .phone {
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .button-wrapper {
+        .button {
+          font-size: 14px;
+        }
+      }
+
+      .socials {
+        gap: 5px;
+
+        .socials__link {
+          width: 30px;
+          height: 30px;
+
+          .socials__icon {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-header {
+    margin-top: 10px;
+    padding: 5px;
+
+    .nav-header__list {
+      padding: 5px;
+
+      .nav-header__list-item {
+        padding: 5px;
+        font-size: 12px;
+
+        .dropdown-menu {
+          li {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .burger-modal {
+    width: 100%; // Модальное окно на всю ширину экрана
+    height: 100vh; // На всю высоту экрана
+
+    .burger-modal-content {
+      .burger-menu-list {
+        gap: 20px;
+
+        .burger-menu-item {
+          margin-left: 20px;
+        }
+      }
+
+      .burger-footer {
+        .burder-wrapper {
+          width: 90%;
+          height: auto;
+          gap: 20px;
+
+          .burder-address {
+            margin-top: 20px;
+          }
+
+          .burder-button {
+            height: 40px;
+            .button {
+              width: 100%;
+            }
+          }
+
+          .burder-social {
+            justify-content: center;
+            gap: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .top__header {
+    .left {
+      .logo {
+        .logo-img {
+          width: 30px;
+          height: 30px;
+
+          .logo-img__text {
+            font-size: 18px;
+          }
+        }
+
+        .logo-text {
+          .logo-text__title {
+            font-size: 18px;
+          }
+
+          .logo-text__subtitle {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .address {
+        p {
+          font-size: 10px;
+        }
+      }
+    }
+
+    .right {
+      .phone {
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .button-wrapper {
+        .button {
+          font-size: 12px;
+        }
+      }
+
+      .socials {
+        gap: 5px;
+
+        .socials__link {
+          width: 25px;
+          height: 25px;
+
+          .socials__icon {
+            width: 25px;
+            height: 25px;
+          }
+        }
+      }
+    }
+  }
+
+  .nav-header {
+    .nav-header__list {
+      .nav-header__list-item {
+        font-size: 10px;
+      }
     }
   }
 }
@@ -2449,9 +2778,6 @@ body {
 
 .map {
   margin-top: 0;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+  width: 100%;
+  height: 783px;
 }

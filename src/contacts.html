@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./assets/styles/styles.css" />
     <title>Viatek media | Контакты</title>
+
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
   </head>
   <body>
     <!-- Header -->
@@ -474,8 +476,8 @@
 
           <div class="container footer__top-line"></div>
 
-          <div class="map">
-            <img src="./assets/images/map/map.png" alt="" />
+          <div id="map" class="map">
+            <!-- <img src="./assets/images/map/map.png" alt="" /> -->
           </div>
         </div>
       </section>
@@ -553,4 +555,15 @@
 
   <script src="./assets/js/feedback-modal.js"></script>
   <script src="./assets/js/burger-menu.js"></script>
+
+  <script type="text/javascript">
+    ymaps.ready(init);
+
+    function init() {
+      var myMap = new ymaps.Map("map", {
+        center: [55.75, 37.62], // Координаты центра карты (Москва)
+        zoom: 10, // Масштаб карты
+      });
+    }
+  </script>
 </html>

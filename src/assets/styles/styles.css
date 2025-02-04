@@ -860,6 +860,14 @@ body {
   position: relative;
   cursor: pointer;
 }
+@media (max-width: 1024px) {
+  .nav-header .nav-header__list .nav-header__list-item {
+    display: none;
+  }
+  .nav-header .nav-header__list .nav-header__list-item.burger-menu {
+    display: flex;
+  }
+}
 .nav-header .nav-header__list .nav-header__list-item .dropdown-link {
   display: flex;
   align-items: center;
@@ -934,10 +942,15 @@ body {
 }
 .nav-header .burger-menu {
   cursor: pointer;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 10px;
+}
+@media (max-width: 1024px) {
+  .nav-header .burger-menu {
+    display: flex;
+  }
 }
 .nav-header .burger-menu .burger-icon {
   display: flex;
@@ -1194,6 +1207,227 @@ body {
   visibility: visible;
 }
 
+@media (max-width: 1024px) {
+  .header__absolute {
+    background: rgba(11, 27, 35, 0.9);
+  }
+  .top__header {
+    height: auto;
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .top__header .left {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+  }
+  .top__header .left .logo {
+    gap: 10px;
+    height: auto;
+  }
+  .top__header .left .logo .logo-img {
+    width: 50px;
+    height: 50px;
+  }
+  .top__header .left .logo .logo-img .logo-img__text {
+    font-size: 24px;
+  }
+  .top__header .left .logo .logo-text {
+    width: auto;
+  }
+  .top__header .left .logo .logo-text .logo-text__title {
+    font-size: 24px;
+  }
+  .top__header .left .logo .logo-text .logo-text__subtitle {
+    font-size: 14px;
+  }
+  .top__header .left .line {
+    display: none;
+  }
+  .top__header .left .address {
+    height: auto;
+  }
+  .top__header .left .address p {
+    font-size: 14px;
+  }
+  .top__header .right {
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+    align-items: flex-start;
+  }
+  .top__header .right .phone {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .top__header .right .phone p {
+    font-size: 18px;
+  }
+  .top__header .right .phone .dropdown-menu {
+    width: 100%;
+    right: auto;
+    left: 0;
+  }
+  .top__header .right .button-wrapper {
+    width: 100%;
+  }
+  .top__header .right .button-wrapper .button {
+    width: 100%;
+  }
+  .top__header .right .socials {
+    gap: 10px;
+  }
+  .nav-header {
+    height: auto;
+    margin-top: 20px;
+    padding: 10px;
+  }
+  .nav-header .nav-header__list {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .nav-header .nav-header__list .nav-header__list-item {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .nav-header .nav-header__list .nav-header__list-item .dropdown-menu {
+    position: static;
+    opacity: 1;
+    pointer-events: all;
+    background: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  .nav-header .nav-header__list .nav-header__list-item .dropdown-menu li {
+    margin-bottom: 10px;
+  }
+  .nav-header .nav-header__list .burger-menu {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .header__absolute {
+    background: rgba(11, 27, 35, 0.95);
+  }
+  .top__header {
+    padding: 10px;
+  }
+  .top__header .left .logo .logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  .top__header .left .logo .logo-img .logo-img__text {
+    font-size: 20px;
+  }
+  .top__header .left .logo .logo-text .logo-text__title {
+    font-size: 20px;
+  }
+  .top__header .left .logo .logo-text .logo-text__subtitle {
+    font-size: 12px;
+  }
+  .top__header .left .address p {
+    font-size: 12px;
+  }
+  .top__header .right .phone p {
+    font-size: 16px;
+  }
+  .top__header .right .button-wrapper .button {
+    font-size: 14px;
+  }
+  .top__header .right .socials {
+    gap: 5px;
+  }
+  .top__header .right .socials .socials__link {
+    width: 30px;
+    height: 30px;
+  }
+  .top__header .right .socials .socials__link .socials__icon {
+    width: 30px;
+    height: 30px;
+  }
+  .nav-header {
+    margin-top: 10px;
+    padding: 5px;
+  }
+  .nav-header .nav-header__list {
+    padding: 5px;
+  }
+  .nav-header .nav-header__list .nav-header__list-item {
+    padding: 5px;
+    font-size: 12px;
+  }
+  .nav-header .nav-header__list .nav-header__list-item .dropdown-menu li {
+    margin-bottom: 5px;
+  }
+  .burger-modal {
+    width: 100%;
+    height: 100vh;
+  }
+  .burger-modal .burger-modal-content .burger-menu-list {
+    gap: 20px;
+  }
+  .burger-modal .burger-modal-content .burger-menu-list .burger-menu-item {
+    margin-left: 20px;
+  }
+  .burger-modal .burger-modal-content .burger-footer .burder-wrapper {
+    width: 90%;
+    height: auto;
+    gap: 20px;
+  }
+  .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-address {
+    margin-top: 20px;
+  }
+  .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-button {
+    height: 40px;
+  }
+  .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-button .button {
+    width: 100%;
+  }
+  .burger-modal .burger-modal-content .burger-footer .burder-wrapper .burder-social {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .top__header .left .logo .logo-img {
+    width: 30px;
+    height: 30px;
+  }
+  .top__header .left .logo .logo-img .logo-img__text {
+    font-size: 18px;
+  }
+  .top__header .left .logo .logo-text .logo-text__title {
+    font-size: 18px;
+  }
+  .top__header .left .logo .logo-text .logo-text__subtitle {
+    font-size: 10px;
+  }
+  .top__header .left .address p {
+    font-size: 10px;
+  }
+  .top__header .right .phone p {
+    font-size: 14px;
+  }
+  .top__header .right .button-wrapper .button {
+    font-size: 12px;
+  }
+  .top__header .right .socials {
+    gap: 5px;
+  }
+  .top__header .right .socials .socials__link {
+    width: 25px;
+    height: 25px;
+  }
+  .top__header .right .socials .socials__link .socials__icon {
+    width: 25px;
+    height: 25px;
+  }
+  .nav-header .nav-header__list .nav-header__list-item {
+    font-size: 10px;
+  }
+}
 .container__header {
   max-width: 1920px;
   margin: 0 auto;
@@ -3410,10 +3644,6 @@ body {
 
 .map {
   margin-top: 0;
-}
-.map img {
   width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  height: 783px;
 }/*# sourceMappingURL=styles.css.map */
