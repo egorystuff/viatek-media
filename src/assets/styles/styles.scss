@@ -927,6 +927,36 @@ body {
         text-transform: uppercase;
 
         color: var(--main-text-color);
+
+        // Стили для fraction (отображается на больших экранах)
+        &.swiper-pagination-fraction {
+          .swiper-pagination-current,
+          .swiper-pagination-total {
+            color: var(--main-text-color);
+          }
+        }
+
+        // Стили для bullets (отображается на маленьких экранах)
+        &.swiper-pagination-bullets {
+          display: flex;
+          justify-content: center;
+          gap: 10px;
+
+          .swiper-pagination-bullet {
+            width: 30px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 2px;
+            margin: 0;
+            opacity: 1;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer; // Делаем полоски кликабельными
+          }
+
+          .swiper-pagination-bullet-active {
+            background: var(--secondary-color); // Цвет активной полоски
+          }
+        }
       }
 
       .swiper-button-prev,
@@ -948,6 +978,28 @@ body {
 
         &::after {
           content: "";
+        }
+      }
+    }
+  }
+
+  // Медиа-запрос для экранов меньше 1024px
+  @media (max-width: 1024px) {
+    .right__slide {
+      .slide__wrapper {
+        .swiper-button-prev,
+        .swiper-button-next {
+          display: none; // Скрываем кнопки
+        }
+
+        .swiper-pagination {
+          &.swiper-pagination-fraction {
+            display: none; // Скрываем fraction на маленьких экранах
+          }
+
+          &.swiper-pagination-bullets {
+            display: flex; // Показываем bullets на маленьких экранах
+          }
         }
       }
     }
