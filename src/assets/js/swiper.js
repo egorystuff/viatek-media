@@ -3,7 +3,7 @@ let currentSlideIndex = 0; // Переменная для хранения те�
 
 // Функция для инициализации Swiper
 function initSwiper() {
-  const isMobile = window.innerWidth <= 1024;
+  const isMobile = window.innerWidth <= 768;
 
   // Если Swiper уже инициализирован, сохраняем текущий индекс слайда
   if (swiperInstance) {
