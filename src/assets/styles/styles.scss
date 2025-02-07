@@ -1117,6 +1117,7 @@ body {
     gap: 30px;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 25px;
   }
 
   .services__block-item {
@@ -1217,6 +1218,29 @@ body {
     background: var(--main-bg-color);
   }
 
+  .about__title {
+    display: none;
+    align-items: center;
+    padding: 50px;
+
+    h1 {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 50px;
+      line-height: 35px;
+
+      @media (max-width: 768px) {
+        font-size: 40px;
+        line-height: 30px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      display: flex;
+    }
+  }
+
   .about__bg {
     position: absolute;
     left: 50%;
@@ -1237,7 +1261,6 @@ body {
       position: static;
       width: 100%;
       height: auto;
-      order: 2; // Картинка будет второй по порядку
     }
   }
 
@@ -1276,14 +1299,10 @@ body {
       }
 
       @media (max-width: 1024px) {
+        display: none;
+
         font-size: 50px;
         line-height: 60px;
-        order: 1; // Заголовок будет первым по порядку
-      }
-
-      @media (max-width: 768px) {
-        font-size: 40px;
-        line-height: 50px;
       }
     }
 
@@ -1297,7 +1316,6 @@ body {
 
       @media (max-width: 1024px) {
         max-width: 90%;
-        order: 3; // Описание будет третьим по порядку
       }
 
       p {
@@ -1337,7 +1355,6 @@ body {
         width: 100%;
         justify-content: center;
         margin-top: 30px;
-        order: 4; // Кнопка будет четвертой по порядку
       }
 
       .button {
@@ -1386,14 +1403,28 @@ body {
 .price__block {
   .price__block-title {
     height: 70px;
-
     font-family: "Raleway";
     font-style: normal;
     font-weight: 200;
     font-size: 60px;
     line-height: 70px;
-
     margin: 50px 0;
+
+    @media (max-width: 1536px) {
+      font-size: 55px;
+      line-height: 65px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 50px;
+      line-height: 60px;
+      margin-top: 0;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 40px;
+      line-height: 50px;
+    }
   }
 
   .price__block-list {
@@ -1414,18 +1445,41 @@ body {
       background: var(--secondary-text-color);
       border-radius: 5px;
 
+      @media (max-width: 768px) {
+        align-items: center;
+      }
+
       .price__block-item-top {
         display: flex;
         padding: 20px 30px;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
 
+        @media (max-width: 768px) {
+          width: 100%;
+          flex-direction: column;
+          align-items: center;
+          gap: 20px;
+        }
+
         .price__block-item-text {
           display: flex;
-          height: 44px;
+          height: auto;
           width: 73%;
-
           color: var(--secondary-color);
+
+          @media (max-width: 1280px) {
+            width: 65%;
+          }
+
+          @media (max-width: 1024px) {
+            width: 55%;
+          }
+
+          @media (max-width: 768px) {
+            width: 350px;
+            justify-content: start;
+          }
           p {
             display: flex;
             flex-direction: row;
@@ -1437,6 +1491,7 @@ body {
             line-height: 30px;
           }
         }
+
         .price__block-item-wrapper {
           display: flex;
           flex-direction: row;
@@ -1444,10 +1499,23 @@ body {
           width: 27%;
           justify-content: space-between;
 
+          @media (max-width: 1280px) {
+            width: 35%;
+          }
+
+          @media (max-width: 1024px) {
+            width: 45%;
+          }
+
+          @media (max-width: 768px) {
+            width: 350px;
+            justify-content: start;
+            align-items: center;
+          }
+
           .item-price {
             width: 179px;
             height: 30px;
-
             font-family: "Mplus 1p";
             font-style: normal;
             font-weight: 400;
@@ -1478,6 +1546,7 @@ body {
               text-transform: uppercase;
             }
           }
+
           .item-icon {
             display: flex;
             flex-direction: row;
@@ -1514,6 +1583,10 @@ body {
           gap: 50px;
           overflow: hidden;
 
+          @media (max-width: 768px) {
+            margin-bottom: 50px;
+          }
+
           .details__text {
             width: 70%;
 
@@ -1534,6 +1607,7 @@ body {
       }
     }
   }
+
   [id^="id-item_"] .price__block-item-top:hover {
     background: var(--secondary-color);
 
@@ -1569,6 +1643,12 @@ body {
       font-size: 15px;
       line-height: 22px;
       text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: center;
+      margin-top: 30px;
     }
   }
 }
