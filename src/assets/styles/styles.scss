@@ -135,6 +135,14 @@ body {
   border-bottom: 1px solid #122d3b;
 }
 
+.mobile__line {
+  display: none;
+  @media (max-width: 1024px) {
+    display: block;
+    border-bottom: 1px solid #122d3b;
+  }
+}
+
 .padding__bottom_none {
   padding-bottom: 0;
 }
@@ -1042,6 +1050,78 @@ body {
 // TITLE-------------------------------------------------------------
 
 .title {
+  .title__subtitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    margin-bottom: 50px;
+
+    max-width: 1440px;
+    height: 18px;
+
+    @media (max-width: 1280px) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 1024px) {
+      margin-bottom: 20px;
+    }
+
+    .title__line {
+      width: 50px;
+      height: 0px;
+      border: 1px solid var(--secondary-color);
+    }
+
+    .title__subtitle-text {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 18px;
+      text-transform: uppercase;
+
+      color: var(--secondary-color);
+    }
+
+    .text__secondary {
+      color: var(--title-color);
+      text-transform: none;
+    }
+
+    .title__subtitle-arrow {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .title__text {
+    font-family: "Raleway";
+    font-weight: 200;
+    font-size: 60px;
+    line-height: 70px;
+    max-width: 984px;
+
+    @media (max-width: 1280px) {
+      font-size: 50px;
+      line-height: 60px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 40px;
+      line-height: 50px;
+    }
+  }
+
+  .title__text-secondary {
+    color: var(--title-color);
+  }
+}
+
+// SERVICES-------------------------------------------------------------
+
+.title__services {
   @media (max-width: 768px) {
     display: none;
   }
@@ -1101,8 +1181,6 @@ body {
     color: var(--title-color);
   }
 }
-
-// SERVICES-------------------------------------------------------------
 
 .services__block {
   display: flex;
@@ -1216,19 +1294,20 @@ body {
 
   @media (max-width: 1024px) {
     background: var(--main-bg-color);
+    margin-bottom: 20px;
   }
 
   .about__title {
     display: none;
     align-items: center;
-    padding: 50px;
+    padding: 40px 20px;
 
     h1 {
       font-family: "Raleway";
       font-style: normal;
-      font-weight: 400;
-      font-size: 50px;
-      line-height: 35px;
+      font-weight: 200;
+      font-size: 60px;
+      line-height: 70px;
 
       @media (max-width: 768px) {
         font-size: 40px;
@@ -1387,15 +1466,6 @@ body {
       }
     }
   }
-
-  @media (max-width: 1536px) {
-    height: 800px;
-  }
-
-  @media (max-width: 1024px) {
-    height: auto;
-    padding-bottom: 50px;
-  }
 }
 
 // PRICE-------------------------------------------------------------
@@ -1418,7 +1488,7 @@ body {
     @media (max-width: 1024px) {
       font-size: 50px;
       line-height: 60px;
-      margin-top: 0;
+      margin: 20px 0;
     }
 
     @media (max-width: 768px) {
@@ -1649,6 +1719,7 @@ body {
       width: 100%;
       justify-content: center;
       margin-top: 30px;
+      margin-bottom: 20px;
     }
   }
 }
@@ -1700,10 +1771,15 @@ body {
   display: flex;
   padding: 0px;
   gap: 30px;
+
   .portfolio__block {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+
+    @media (max-width: 1024px) {
+      display: none; // Скрываем оригинальный блок на экранах <= 1024px
+    }
 
     .portfolio__block-item {
       position: relative;
@@ -1747,12 +1823,99 @@ body {
   }
 }
 
+.portfolioSwiper {
+  width: 100%;
+  height: 100%;
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    position: relative;
+
+    width: 460px;
+    height: 350px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 0.3s ease-in-out;
+      opacity: 0.8;
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.9998 6.00098C14.0586 6.00098 5.99976 14.0598 5.99976 24.001C5.99976 33.9421 14.0586 42.001 23.9998 42.001C33.9409 42.001 41.9998 33.9421 41.9998 24.001C41.9998 14.0598 33.9409 6.00098 23.9998 6.00098ZM-0.000244141 24.001C-0.000244141 10.7461 10.7449 0.000976562 23.9998 0.000976562C37.2546 0.000976562 47.9998 10.7461 47.9998 24.001C47.9998 29.5471 46.1185 34.6539 42.9593 38.7179L59.1211 54.8796C60.2926 56.0512 60.2926 57.9507 59.1211 59.1223C57.9495 60.2939 56.05 60.2939 54.8784 59.1223L38.7167 42.9605C34.6526 46.1197 29.5459 48.001 23.9998 48.001C10.7449 48.001 -0.000244141 37.2558 -0.000244141 24.001ZM23.9998 15.001C25.6566 15.001 26.9998 16.3441 26.9998 18.001V21.001H29.9998C31.6566 21.001 32.9998 22.3441 32.9998 24.001C32.9998 25.6578 31.6566 27.001 29.9998 27.001H26.9998V30.001C26.9998 31.6578 25.6566 33.001 23.9998 33.001C22.3429 33.001 20.9998 31.6578 20.9998 30.001V27.001H17.9998C16.3429 27.001 14.9998 25.6578 14.9998 24.001C14.9998 22.3441 16.3429 21.001 17.9998 21.001H20.9998V18.001C20.9998 16.3441 22.3429 15.001 23.9998 15.001Z' fill='white'/%3E%3C/svg%3E%0A");
+      background-size: cover;
+      opacity: 0;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+        opacity: 1;
+      }
+
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    position: static;
+    margin-top: 30px;
+    &.swiper-pagination-bullets {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      .swiper-pagination-bullet {
+        width: 36px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 2px;
+        margin: 0;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: var(--secondary-color);
+      }
+    }
+  }
+}
+
 .portfolio__button {
   display: flex;
   width: 188px;
   height: 44px;
   margin-top: 50px;
   border-radius: 5px;
+
+  @media (max-width: 1024px) {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
   .button {
     @include base_button(250px, var(--secondary-color), var(--secondary-text-color));
     p {
@@ -1765,6 +1928,7 @@ body {
     }
   }
 }
+
 :hover > svg {
   fill: var(--main-text-color);
 }
