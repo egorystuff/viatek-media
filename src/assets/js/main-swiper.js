@@ -1,5 +1,6 @@
 let swiperInstance = null;
 let portfolioSwiper = null;
+let promoSwiper = null;
 let currentSlideIndex = 0;
 
 //---------------------------------------------------------------------------------------------------------------
@@ -30,12 +31,6 @@ function initPortfolioSwiper() {
     const pagination = document.createElement("div");
     pagination.classList.add("swiper-pagination");
 
-    const buttonNext = document.createElement("div");
-    buttonNext.classList.add("swiper-button-next");
-
-    const buttonPrev = document.createElement("div");
-    buttonPrev.classList.add("swiper-button-prev");
-
     // Собираем Swiper
     swiperContainer.appendChild(swiperWrapper);
     swiperContainer.appendChild(pagination);
@@ -51,15 +46,77 @@ function initPortfolioSwiper() {
         el: ".swiper-pagination",
         clickable: true,
       },
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+      },
     });
   } else if (!isMobile && document.querySelector(".portfolioSwiper")) {
     // Если экран больше 1024px, возвращаем исходный блок
     const swiperContainer = document.querySelector(".portfolioSwiper");
     const swiperWrapper = swiperContainer.querySelector(".swiper-wrapper");
 
-    // Восстанавливаем оригинальный блок
     const originalBlock = document.createElement("div");
     originalBlock.classList.add("portfolio__block");
+
+    Array.from(swiperWrapper.children).forEach((slide) => {
+      originalBlock.appendChild(slide.firstElementChild.cloneNode(true));
+    });
+
+    swiperContainer.replaceWith(originalBlock);
+  }
+}
+
+//---------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------
+
+function initPromoSwiper() {
+  const promoBlock = document.querySelector(".promo__block");
+  const isMobile = window.innerWidth <= 1024;
+
+  if (isMobile && promoBlock && !promoBlock.classList.contains("swiper-wrapper")) {
+    const swiperContainer = document.createElement("div");
+    swiperContainer.classList.add("swiper", "promoSwiper");
+
+    const swiperWrapper = document.createElement("div");
+    swiperWrapper.classList.add("swiper-wrapper");
+
+    Array.from(promoBlock.children).forEach((item) => {
+      const swiperSlide = document.createElement("div");
+      swiperSlide.classList.add("swiper-slide");
+      swiperSlide.appendChild(item.cloneNode(true));
+      swiperWrapper.appendChild(swiperSlide);
+    });
+
+    const pagination = document.createElement("div");
+    pagination.classList.add("swiper-pagination");
+
+    swiperContainer.appendChild(swiperWrapper);
+    swiperContainer.appendChild(pagination);
+
+    promoBlock.replaceWith(swiperContainer);
+
+    new Swiper(".promoSwiper", {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+
+      breakpoints: {
+        768: {
+          slidesPerView: 2,
+        },
+      },
+    });
+  } else if (!isMobile && document.querySelector(".promoSwiper")) {
+    const swiperContainer = document.querySelector(".promoSwiper");
+    const swiperWrapper = swiperContainer.querySelector(".swiper-wrapper");
+
+    const originalBlock = document.createElement("div");
+    originalBlock.classList.add("promo__block");
 
     Array.from(swiperWrapper.children).forEach((slide) => {
       originalBlock.appendChild(slide.firstElementChild.cloneNode(true));
@@ -99,26 +156,12 @@ function initSwiper() {
 //---------------------------------------------------------------------------------------------------------------
 //---------------------------------------------------------------------------------------------------------------
 
-function debounce(func, timeout = 100) {
-  let timer;
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, timeout);
-  };
-}
-
-//---------------------------------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------------------------------
-
 initSwiper();
 initPortfolioSwiper();
+initPromoSwiper();
 
-window.addEventListener(
-  "resize",
-  debounce(() => {
-    initSwiper();
-    initPortfolioSwiper();
-  }),
-);
+window.addEventListener("resize", () => {
+  initSwiper();
+  initPortfolioSwiper();
+  initPromoSwiper();
+});
