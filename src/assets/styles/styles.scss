@@ -174,15 +174,19 @@ body {
 
   @media (max-width: 1280px) {
     flex-direction: column;
-    height: auto;
     gap: 30px;
   }
 
-  .left {
+  .left,
+  .right {
     display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .left {
     max-width: 630px;
     height: 60px;
-    gap: 20px;
 
     .logo {
       display: flex;
@@ -195,19 +199,17 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0;
-        gap: 10px;
         width: 60px;
         height: 60px;
-
+        padding: 0;
+        gap: 10px;
         background: var(--secondary-color);
         border-radius: 50%;
+
         .logo-img__text {
           font-weight: 900;
           font-size: 28px;
           text-transform: uppercase;
-          align-items: center;
-          justify-content: center;
         }
       }
 
@@ -218,7 +220,6 @@ body {
         width: 210px;
 
         .logo-text__title {
-          display: flex;
           font-weight: 800;
           font-size: 30px;
           line-height: 100%;
@@ -226,7 +227,6 @@ body {
         }
 
         .logo-text__subtitle {
-          display: flex;
           font-weight: 400;
           font-size: 17px;
           line-height: 100%;
@@ -235,36 +235,33 @@ body {
     }
 
     .line {
-      display: flex;
-      width: 0px;
+      width: 0;
       height: 60px;
       opacity: 0.5;
       border: 1px solid var(--main-text-color);
+
       @media (max-width: 768px) {
         display: none;
       }
     }
 
     .address {
-      display: flex;
       height: 60px;
       align-items: center;
+
       @media (max-width: 768px) {
         display: none;
       }
+
       p {
-        font-family: "Mplus 1p";
+        font-family: "Mplus 1p", sans-serif;
         font-weight: 400;
         font-size: 15px;
       }
     }
   }
-  .right {
-    display: flex;
-    align-items: center;
-    padding: 0px;
-    gap: 20px;
 
+  .right {
     max-width: 642px;
     height: 40px;
 
@@ -287,12 +284,9 @@ body {
       }
 
       p {
-        display: flex;
-        font-family: "Mplus 1p";
-        font-style: normal;
+        font-family: "Mplus 1p", sans-serif;
         font-weight: 400;
         font-size: 20px;
-        align-items: center;
       }
 
       .phone__arrow {
@@ -302,6 +296,7 @@ body {
         margin-left: 10px;
         justify-content: center;
         align-items: center;
+        transition: transform 0.2s ease-in-out;
       }
 
       &:hover {
@@ -309,6 +304,7 @@ body {
           pointer-events: all;
           opacity: 1;
         }
+
         .phone__arrow {
           transform: rotate(180deg);
           color: var(--secondary-color);
@@ -319,11 +315,11 @@ body {
         opacity: 0;
         position: absolute;
         top: 100%;
-        padding: 20px;
         right: 0;
+        padding: 20px;
         background: #122d3b;
         border-radius: 5px;
-        transition: all ease-in-out 0.2s;
+        transition: all 0.2s ease-in-out;
         z-index: 1;
         pointer-events: none;
 
@@ -333,12 +329,11 @@ body {
           margin-bottom: 20px;
 
           &:last-child {
-            margin-bottom: 0px;
+            margin-bottom: 0;
           }
-          &:hover {
-            a {
-              color: var(--secondary-color);
-            }
+
+          &:hover a {
+            color: var(--secondary-color);
           }
         }
       }
@@ -348,6 +343,7 @@ body {
       width: 151px;
       height: 38px;
       border-radius: 5px;
+
       .button {
         @include base_button(250px);
       }
@@ -360,56 +356,41 @@ body {
       .socials__link {
         width: 40px;
         height: 40px;
-        display: flex;
 
         .socials__icon {
           display: flex;
-          width: 40px;
-          height: 40px;
           align-items: center;
           justify-content: center;
+          width: 40px;
+          height: 40px;
           background-color: var(--main-bg-color);
           border-radius: 5px;
           transition: all 0.2s ease-in-out;
-        }
 
-        .icon-wt-color {
-          color: #7095aa;
-          &:hover {
+          &[class*="icon-"] {
+            color: #7095aa;
+
+            &:hover {
+              svg path {
+                fill: var(--main-text-color);
+              }
+            }
+          }
+
+          &.icon-wt-color:hover {
             background-color: #25d366;
-            svg path {
-              fill: var(--main-text-color);
-            }
           }
-        }
 
-        .icon-tg-color {
-          color: #7095aa;
-          &:hover {
+          &.icon-tg-color:hover {
             background-color: #24a1de;
-            svg path {
-              fill: var(--main-text-color);
-            }
           }
-        }
 
-        .icon-vk-color {
-          color: #7095aa;
-          &:hover {
+          &.icon-vk-color:hover {
             background-color: #4c75a3;
-            svg path {
-              fill: var(--main-text-color);
-            }
           }
-        }
 
-        .icon-od-color {
-          color: #7095aa;
-          &:hover {
+          &.icon-od-color:hover {
             background-color: #ff9800;
-            svg path {
-              fill: var(--main-text-color);
-            }
           }
         }
       }
@@ -926,6 +907,15 @@ body {
         var(--secondary-color)
       );
 
+      @media (max-width: 768px) {
+        @include price_button(
+          $color: var(--main-text-color),
+          $main-bg-color: var(--secondary-color),
+          $bg-color: var(--main-text-color),
+          $secondary-text-color: var(--secondary-color)
+        );
+      }
+
       p {
         font-family: "Mplus 1p";
         font-style: normal;
@@ -1438,6 +1428,10 @@ body {
 
       .button {
         @include base_button(250px, $color: var(--main-text-color), $main-bg-color: var(--secondary-text-color));
+
+        @media (max-width: 768px) {
+          @include price_button($color: var(--main-text-color), $main-bg-color: var(--secondary-text-color));
+        }
       }
 
       p {
@@ -1917,7 +1911,7 @@ body {
 
   @media (max-width: 1024px) {
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 20px;
   }
   .button {
@@ -1943,14 +1937,6 @@ body {
   background-color: #355e75;
 }
 
-.promo-wrapper {
-  display: flex;
-  margin-top: 0px;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-}
-
 .promo {
   display: flex;
   margin-top: 50px;
@@ -1961,6 +1947,7 @@ body {
   }
 
   max-width: 1440px;
+
   .promo__block {
     display: flex;
     flex-wrap: wrap;
@@ -2003,6 +1990,7 @@ body {
         height: 44px;
         border-radius: 5px;
         transition: all 0.3s ease-in-out;
+
         .button {
           @include base_button(
             300px,
@@ -2041,6 +2029,7 @@ body {
 .promoSwiper {
   width: 100%;
   height: 100%;
+  flex-direction: column;
 
   .swiper-wrapper {
     display: flex;
@@ -2160,6 +2149,16 @@ body {
     font-weight: 250;
     font-size: 60px;
     line-height: 50px;
+
+    @media (max-width: 1280px) {
+      font-size: 50px;
+      line-height: 60px;
+    }
+
+    @media (max-width: 1024px) {
+      font-size: 40px;
+      line-height: 50px;
+    }
   }
 
   .reviews__button {
@@ -2167,8 +2166,10 @@ body {
     width: 232px;
     height: 44px;
     border-radius: 5px;
+
     .button {
       @include base_button(350px, var(--secondary-color), var(--secondary-text-color));
+
       p {
         font-family: "Raleway";
         font-style: normal;
@@ -2178,7 +2179,12 @@ body {
         margin-right: 20px;
       }
     }
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
   }
+
   :hover > svg {
     fill: var(--main-text-color);
   }
@@ -2196,6 +2202,15 @@ body {
     width: 322px;
     height: 441px;
 
+    .reviews_item-grade,
+    .reviews_item-title p,
+    .reviews_item-text p,
+    .reviews_item-button p {
+      font-family: "Mplus 1p";
+      font-style: normal;
+      font-weight: 400;
+    }
+
     .reviews_item-grade {
       display: flex;
       gap: 10px;
@@ -2207,10 +2222,8 @@ body {
     .reviews_item-title {
       height: 37px;
       margin-top: 30px;
+
       p {
-        font-family: "Mplus 1p";
-        font-style: normal;
-        font-weight: 400;
         font-size: 25px;
         line-height: 37px;
         color: #7095aa;
@@ -2220,10 +2233,8 @@ body {
     .reviews_item-text {
       height: 240px;
       margin-top: 30px;
+
       p {
-        font-family: "Mplus 1p";
-        font-style: normal;
-        font-weight: 400;
         font-size: 20px;
         line-height: 150%;
       }
@@ -2244,13 +2255,126 @@ body {
           $bg-color: var(--secondary-color)
         );
       }
+
       p {
-        font-family: "Mplus 1p";
-        font-style: normal;
         font-weight: 500;
         font-size: 20px;
         line-height: 30px;
         text-transform: none;
+      }
+    }
+  }
+}
+
+.reviewsSwiper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  .swiper-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+
+    .reviews_item {
+      gap: 30px;
+      width: 322px;
+      height: 441px;
+      margin-bottom: 20px;
+
+      &-grade {
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        width: 160px;
+        height: 24px;
+      }
+
+      &-title {
+        height: 37px;
+        margin-top: 30px;
+
+        p {
+          font-family: "Mplus 1p", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 25px;
+          line-height: 37px;
+          color: #7095aa;
+        }
+      }
+
+      &-text {
+        height: 240px;
+        margin-top: 30px;
+
+        p {
+          font-family: "Mplus 1p", sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 150%;
+        }
+      }
+
+      &-button {
+        width: 149px;
+        height: 50px;
+        margin-top: 30px;
+        border: 1px solid rgba(86, 146, 179, 0.31);
+        border-radius: 5px;
+
+        .button {
+          @include base_button(
+            250px,
+            $color: var(--main-text-color),
+            $main-bg-color: var(--main-bg-color),
+            $bg-color: var(--secondary-color)
+          );
+
+          p {
+            font-family: "Mplus 1p", sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 30px;
+            text-transform: none;
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-pagination {
+    position: static;
+    margin: 30px 0 20px;
+
+    &.swiper-pagination-bullets {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+
+      .swiper-pagination-bullet {
+        width: 36px;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 2px;
+        margin: 0;
+        opacity: 1;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        &-active {
+          background: var(--secondary-color);
+        }
       }
     }
   }
@@ -2273,9 +2397,19 @@ body {
 
 .footer_block {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 50px;
+
+  @media (max-width: 1280px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
 
   .logo {
     display: flex;
@@ -2309,6 +2443,10 @@ body {
       align-items: flex-start;
       width: 210px;
 
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+
       .logo-text__title {
         display: flex;
         font-weight: 800;
@@ -2332,6 +2470,12 @@ body {
     height: 60px;
     opacity: 0.5;
     border: 1px solid var(--main-text-color);
+
+    @media (max-width: 768px) {
+      height: 0px;
+      width: 100%;
+      margin: 10px 0;
+    }
   }
 
   .address {
@@ -2443,6 +2587,10 @@ body {
   background-size: cover;
   transform: rotate(-40.3deg);
   z-index: 10;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
 
 .footer-bg-right {
@@ -2455,12 +2603,20 @@ body {
   background-size: cover;
   transform: rotate(-11.24deg);
   z-index: 10;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }
 
 // NAVIGATION--------------------------------------------------------------
 
 .navigation {
   margin-top: 50px;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
   .navigation__list {
     display: flex;
     flex-direction: row;
@@ -2507,6 +2663,10 @@ body {
 
 .pagination {
   margin-top: 150px;
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
   .pagination__list {
     display: flex;
     flex-direction: row;
