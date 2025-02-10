@@ -1,8 +1,5 @@
 @import "./fonts.scss";
 @import "./mixins.scss";
-@import "./about-page-styles.scss";
-@import "./services-page-styles.scss";
-@import "./portfolio-page-styles.scss";
 
 * {
   padding: 0;
@@ -148,8 +145,9 @@ body {
 }
 
 // MAIN-CONTENT---------------------------------------------------------------------------------------------
-// HEADER-------------------------------------------------------------
 
+//===========================================================================================================
+// HEADER-------------------------------------------------------------
 .header__absolute {
   position: absolute;
   top: 0;
@@ -246,6 +244,7 @@ body {
     }
 
     .address {
+      display: flex;
       height: 60px;
       align-items: center;
 
@@ -786,8 +785,8 @@ body {
   }
 }
 
+//===========================================================================================================
 // SLIDE-------------------------------------------------------------
-
 .container__header {
   position: relative;
   max-width: 1920px;
@@ -1037,8 +1036,8 @@ body {
   }
 }
 
+//===========================================================================================================
 // TITLE-------------------------------------------------------------
-
 .title {
   .title__subtitle {
     display: flex;
@@ -1109,8 +1108,8 @@ body {
   }
 }
 
+//===========================================================================================================
 // SERVICES-------------------------------------------------------------
-
 .title__services {
   @media (max-width: 768px) {
     display: none;
@@ -1275,8 +1274,8 @@ body {
   }
 }
 
+//===========================================================================================================
 // ABOUT-------------------------------------------------------------
-
 .about {
   position: relative;
   height: auto;
@@ -1462,8 +1461,8 @@ body {
   }
 }
 
+//===========================================================================================================
 // PRICE-------------------------------------------------------------
-
 .price__block {
   .price__block-title {
     height: 70px;
@@ -1759,8 +1758,8 @@ body {
   }
 }
 
+//===========================================================================================================
 // PORTFOLIO-------------------------------------------------------------
-
 .portfolio {
   display: flex;
   padding: 0px;
@@ -1931,8 +1930,8 @@ body {
   fill: var(--main-text-color);
 }
 
+//===========================================================================================================
 //PROMO-------------------------------------------------------------
-
 .container__promo {
   background-color: #355e75;
 }
@@ -2135,8 +2134,8 @@ body {
   }
 }
 
+//===========================================================================================================
 //REVIEW-------------------------------------------------------------
-
 .reviews__title {
   display: flex;
   flex-direction: row;
@@ -2380,8 +2379,8 @@ body {
   }
 }
 
+//===========================================================================================================
 // FOOTER-------------------------------------------------------------
-
 .footer__top-line {
   border-top: 1px solid #122d3b;
 }
@@ -2609,8 +2608,8 @@ body {
   }
 }
 
+//===========================================================================================================
 // NAVIGATION--------------------------------------------------------------
-
 .navigation {
   margin-top: 50px;
 
@@ -2659,8 +2658,8 @@ body {
   }
 }
 
+//===========================================================================================================
 // PAGINATION--------------------------------------------------------------
-
 .pagination {
   margin-top: 150px;
 
@@ -2714,6 +2713,7 @@ body {
   }
 }
 
+//===========================================================================================================
 //MODALS--------------------------------------------------------------
 .modal {
   display: none;
@@ -3048,6 +3048,7 @@ body {
   }
 }
 
+//===========================================================================================================
 // CONTACTS PAGE STYLES------------------------------------------------------
 .contacts__page {
   display: flex;
@@ -3304,4 +3305,431 @@ body {
   margin-top: 0;
   width: 100%;
   height: 783px;
+}
+
+//===========================================================================================================
+// SERVICES PAGE STYLES------------------------------------------------------
+.services__page {
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  gap: 50px;
+
+  max-width: 1440px;
+  height: auto;
+  margin-bottom: 150px;
+
+  &:last-child {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 1280px) {
+    margin-bottom: 50px;
+  }
+
+  .services__page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 30px;
+
+    max-width: 490px;
+    height: auto;
+
+    h1 {
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 47px;
+
+      color: var(--secondary-color);
+
+      @media (max-width: 1024px) {
+        font-size: 30px;
+      }
+    }
+
+    p {
+      font-family: "Mplus 1p";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+    }
+
+    .services__page-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px;
+      gap: 30px;
+
+      @media (max-width: 640px) {
+        flex-direction: column;
+      }
+
+      .button_left {
+        width: 230px;
+        height: 70px;
+        border-radius: 5px;
+
+        @media (max-width: 1280px) {
+          display: none;
+        }
+
+        .button {
+          @include base_button(350px, $color: var(--main-text-color));
+        }
+      }
+
+      .button_right {
+        width: 230px;
+        height: 70px;
+        border-radius: 5px;
+
+        @media (max-width: 1280px) {
+          width: 490px;
+        }
+
+        @media (max-width: 640px) {
+          width: 300px;
+        }
+
+        .button {
+          @include base_button(
+            350px,
+            $color: var(--main-text-color),
+            $main-bg-color: var(--secondary-color),
+            $bg-color: var(--main-bg-color),
+            $secondary-text-color: var(--secondary-color)
+          );
+
+          @media (max-width: 1280px) {
+            @include price_button(
+              $color: var(--main-text-color),
+              $main-bg-color: var(--secondary-color),
+              $bg-color: var(--main-bg-color),
+              $secondary-text-color: var(--secondary-color)
+            );
+          }
+        }
+      }
+
+      .button_full {
+        width: 490px;
+        height: 70px;
+        border-radius: 5px;
+
+        @media (max-width: 640px) {
+          width: 300px;
+        }
+
+        .button {
+          @include price_button(
+            $color: var(--main-text-color),
+            $main-bg-color: var(--secondary-color),
+            $bg-color: var(--main-bg-color),
+            $secondary-text-color: var(--secondary-color)
+          );
+        }
+      }
+    }
+  }
+
+  .services__page-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+
+    width: 900px;
+    height: 525px;
+
+    background: #0f242f;
+    box-shadow: 0px 60px 60px -20px rgba(0, 0, 0, 0.4);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      border-radius: 5px;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    flex-direction: column;
+    .services__page-img {
+      width: 100%;
+      max-height: 500px;
+      margin-bottom: 30px;
+    }
+    .services__page-content {
+      max-width: 100%;
+
+      .services__page-wrapper {
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+//===========================================================================================================
+// PORTFOLIO PAGE STYLES------------------------------------------------------
+.portfolio__page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 30px;
+
+  .portfolio__page-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+
+    .title__line {
+      width: 83px;
+      height: 0px;
+      border: 1px solid var(--secondary-color);
+    }
+
+    p {
+      font-family: "Mplus 1p";
+      font-style: normal;
+      font-weight: 250;
+      font-size: 40px;
+      line-height: 150%;
+
+      color: var(--secondary-color);
+    }
+  }
+
+  .portfolio__page-item {
+    display: flex;
+    padding: 0px;
+    gap: 30px;
+    width: 1440px;
+    height: 680px;
+
+    .left__block {
+      position: relative;
+      width: 400px;
+      height: 680px;
+      border-radius: 5px;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease-in-out;
+        opacity: 0.8;
+
+        &:hover {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .right__block {
+      display: flex;
+      width: 1010px;
+      height: 680px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 30px;
+
+      overflow: hidden;
+
+      .right__block-top,
+      .right__block-bottom {
+        display: flex;
+
+        gap: 30px;
+        width: 1010px;
+        height: 325px;
+
+        .right__block-item-1,
+        .right__block-item-2 {
+          position: relative;
+          overflow: hidden;
+          border-radius: 5px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease-in-out;
+            opacity: 0.8;
+
+            &:hover {
+              opacity: 1;
+              transform: scale(1.1);
+            }
+          }
+        }
+
+        .right__block-item-1 {
+          width: 400px;
+        }
+
+        .right__block-item-2 {
+          width: 580px;
+        }
+      }
+    }
+
+    .left__block,
+    .right__block-item-1,
+    .right__block-item-2 {
+      .icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.9998 6.00098C14.0586 6.00098 5.99976 14.0598 5.99976 24.001C5.99976 33.9421 14.0586 42.001 23.9998 42.001C33.9409 42.001 41.9998 33.9421 41.9998 24.001C41.9998 14.0598 33.9409 6.00098 23.9998 6.00098ZM-0.000244141 24.001C-0.000244141 10.7461 10.7449 0.000976562 23.9998 0.000976562C37.2546 0.000976562 47.9998 10.7461 47.9998 24.001C47.9998 29.5471 46.1185 34.6539 42.9593 38.7179L59.1211 54.8796C60.2926 56.0512 60.2926 57.9507 59.1211 59.1223C57.9495 60.2939 56.05 60.2939 54.8784 59.1223L38.7167 42.9605C34.6526 46.1197 29.5459 48.001 23.9998 48.001C10.7449 48.001 -0.000244141 37.2558 -0.000244141 24.001ZM23.9998 15.001C25.6566 15.001 26.9998 16.3441 26.9998 18.001V21.001H29.9998C31.6566 21.001 32.9998 22.3441 32.9998 24.001C32.9998 25.6578 31.6566 27.001 29.9998 27.001H26.9998V30.001C26.9998 31.6578 25.6566 33.001 23.9998 33.001C22.3429 33.001 20.9998 31.6578 20.9998 30.001V27.001H17.9998C16.3429 27.001 14.9998 25.6578 14.9998 24.001C14.9998 22.3441 16.3429 21.001 17.9998 21.001H20.9998V18.001C20.9998 16.3441 22.3429 15.001 23.9998 15.001Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-size: cover;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      &:hover {
+        .icon {
+          opacity: 0.6;
+        }
+        img {
+          opacity: 1;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.reverse__element {
+  flex-direction: row-reverse;
+}
+
+//===========================================================================================================
+// About Page Styles------------------------------------------------------------
+.about__page {
+  .about__page-title {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+    margin-bottom: 50px;
+    height: 60px;
+
+    .title__line {
+      width: 83px;
+      border: 1px solid var(--secondary-color);
+
+      @media (max-width: 1280px) {
+        display: none;
+      }
+    }
+
+    p {
+      font-family: "Mplus 1p";
+      font-weight: 250;
+      font-size: 40px;
+      line-height: 150%;
+      color: #2cb4fe;
+
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 24px;
+      }
+    }
+
+    &.right {
+      justify-content: flex-end;
+
+      @media (max-width: 1280px) {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  .about__page-content {
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    gap: 20px;
+    margin-bottom: 50px;
+
+    &:last-child {
+      margin-bottom: 50px;
+    }
+
+    .about__page-text,
+    .about__page-img {
+      width: 50%;
+
+      @media (max-width: 1280px) {
+        width: 100%;
+      }
+    }
+
+    .about__page-text {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      gap: 30px;
+
+      p {
+        font-family: "Mplus 1p";
+        font-weight: 300;
+        font-size: 25px;
+        line-height: 150%;
+
+        @media (max-width: 768px) {
+          font-size: 20px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 18px;
+        }
+      }
+    }
+
+    @media (max-width: 1280px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 1280px) {
+    display: flex;
+    flex-direction: column;
+
+    .about__page-title {
+      order: 1;
+      margin-bottom: 20px;
+    }
+
+    .about__page-content {
+      order: 2;
+      .about__page-text {
+        order: 1;
+      }
+      .about__page-img {
+        order: 2;
+      }
+    }
+  }
 }
