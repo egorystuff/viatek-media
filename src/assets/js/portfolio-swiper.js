@@ -1,56 +1,77 @@
-let originalContents = [];
+let swiperInstances = [];
 
 function initPortfolioSwiper() {
   const portfolioWrappers = document.querySelectorAll(".portfolio__page-wrapper");
   const isMobile = window.innerWidth <= 768;
 
-  portfolioWrappers.forEach((portfolioWrapper, index) => {
-    if (isMobile && !portfolioWrapper.classList.contains("swiper-initialized")) {
-      // Сохраняем оригинальное содержимое и классы
-      originalContents[index] = portfolioWrapper.cloneNode(true);
+  if (isMobile) {
+    portfolioWrappers.forEach((portfolioWrapper, index) => {
+      if (!portfolioWrapper.classList.contains("swiper-initialized")) {
+        // Скрываем оригинальный блок
+        portfolioWrapper.style.display = "none";
 
-      const swiperContainer = document.createElement("div");
-      swiperContainer.classList.add("swiper", "portfolioSwiper");
+        // Создаем контейнер для Swiper
+        const swiperContainer = document.createElement("div");
+        swiperContainer.classList.add("swiper", "customSwiper"); // Новое имя класса
 
-      const swiperWrapper = document.createElement("div");
-      swiperWrapper.classList.add("swiper-wrapper");
+        const swiperWrapper = document.createElement("div");
+        swiperWrapper.classList.add("swiper-wrapper");
 
-      Array.from(portfolioWrapper.querySelectorAll("a")).forEach((item) => {
-        const swiperSlide = document.createElement("div");
-        swiperSlide.classList.add("swiper-slide");
-        swiperSlide.appendChild(item.cloneNode(true));
-        swiperWrapper.appendChild(swiperSlide);
-      });
+        // Копируем все элементы <a> с изображениями в слайды
+        Array.from(portfolioWrapper.querySelectorAll("a")).forEach((link) => {
+          const swiperSlide = document.createElement("div");
+          swiperSlide.classList.add("swiper-slide");
+          swiperSlide.appendChild(link.cloneNode(true)); // Копируем весь элемент <a>
+          swiperWrapper.appendChild(swiperSlide);
+        });
 
-      const pagination = document.createElement("div");
-      pagination.classList.add("swiper-pagination");
+        const pagination = document.createElement("div");
+        pagination.classList.add("swiper-pagination");
 
-      swiperContainer.appendChild(swiperWrapper);
-      swiperContainer.appendChild(pagination);
+        swiperContainer.appendChild(swiperWrapper);
+        swiperContainer.appendChild(pagination);
 
-      portfolioWrapper.replaceWith(swiperContainer);
-      swiperContainer.classList.add("swiper-initialized");
+        // Вставляем Swiper после оригинального блока
+        portfolioWrapper.insertAdjacentElement("afterend", swiperContainer);
 
-      new Swiper(".portfolioSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-      });
-    } else if (!isMobile && portfolioWrapper.classList.contains("swiper-initialized")) {
-      const swiperContainer = document.querySelector(".portfolioSwiper");
+        // Инициализируем Swiper
+        const swiperInstance = new Swiper(swiperContainer, {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          pagination: {
+            el: pagination,
+            type: "bullets",
 
-      // Восстанавливаем оригинальное содержимое и классы
-      if (originalContents[index]) {
-        swiperContainer.replaceWith(originalContents[index]);
+            clickable: true,
+          },
+        });
 
-        // Удаляем класс swiper-initialized
-        originalContents[index].classList.remove("swiper-initialized");
+        // Сохраняем экземпляр Swiper
+        swiperInstances[index] = { swiperInstance, swiperContainer };
+
+        // Добавляем класс для отметки инициализации
+        portfolioWrapper.classList.add("swiper-initialized");
       }
-    }
-  });
+    });
+  } else {
+    // Если это десктоп, удаляем Swiper и показываем оригинальные блоки
+    portfolioWrappers.forEach((portfolioWrapper, index) => {
+      if (portfolioWrapper.classList.contains("swiper-initialized")) {
+        // Показываем оригинальный блок
+        portfolioWrapper.style.display = "";
+
+        // Удаляем Swiper, если он был создан
+        if (swiperInstances[index]) {
+          swiperInstances[index].swiperContainer.remove(); // Удаляем контейнер Swiper
+          swiperInstances[index].swiperInstance.destroy(); // Уничтожаем экземпляр Swiper
+          delete swiperInstances[index]; // Удаляем из массива
+        }
+
+        // Убираем класс инициализации
+        portfolioWrapper.classList.remove("swiper-initialized");
+      }
+    });
+  }
 }
 
 initPortfolioSwiper();
