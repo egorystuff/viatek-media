@@ -285,11 +285,12 @@
   display: flex;
   border-radius: 5px;
   overflow: hidden;
+  width: 100%;
 
   .services__block-item-img {
     display: flex;
     overflow: hidden;
-    width: 322.5px;
+    width: 100%;
     height: 114px;
     border-radius: 5px;
 
@@ -363,30 +364,40 @@
   display: flex;
   border-radius: 5px;
   overflow: hidden;
+  width: 100%;
+  background-color: var(--secondary-bg-color);
 
   .services__block-item-img {
     display: flex;
-    width: 322.5px;
+    width: 100%;
     height: 467px;
     border-radius: 5px;
 
     img {
-      height: 100%;
-      width: 100%;
+      display: flex;
+      margin: 0 auto;
+      margin-top: 20px;
+      height: 80%;
+      width: 90%;
       object-fit: cover;
+      border-radius: 5px;
     }
   }
 
   .services__block-item-img-big {
     display: flex;
-    width: 322.5px;
+    width: 100%;
     height: 467px;
     border-radius: 5px;
 
     img {
-      height: 100%;
-      width: 100%;
+      display: flex;
+      margin: 0 auto;
+      margin-top: 20px;
+      height: 80%;
+      width: 90%;
       object-fit: cover;
+      border-radius: 5px;
     }
   }
   .services__block-item-text {

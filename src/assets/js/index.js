@@ -36,6 +36,3 @@ priceBlockItems.forEach((item) => {
     icon.classList.toggle("active");
   });
 });
-
-//price__block disable hover
-//-------------------------------------------------------------------------------------
