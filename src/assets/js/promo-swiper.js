@@ -27,8 +27,10 @@ function initPromoSwiper() {
     promoBlock.replaceWith(swiperContainer);
 
     new Swiper(".promoSwiper", {
-      slidesPerView: 1,
-      spaceBetween: 30,
+      slidesPerView: 1.5,
+      spaceBetween: 20,
+      centeredSlides: false,
+      loop: false,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,

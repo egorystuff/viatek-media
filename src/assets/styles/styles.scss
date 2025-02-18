@@ -225,8 +225,9 @@ body {
   }
 
   .left {
-    max-width: 630px;
     height: 60px;
+    display: flex;
+    align-items: center;
 
     .logo {
       display: flex;
@@ -234,6 +235,7 @@ body {
       gap: 20px;
       height: 60px;
       cursor: pointer;
+      flex-shrink: 0; /* Логотип не будет сжиматься */
 
       .logo-img {
         display: flex;
@@ -246,10 +248,19 @@ body {
         background: var(--secondary-color);
         border-radius: 50%;
 
+        @media (max-width: 640px) {
+          width: 50px;
+          height: 50px;
+        }
+
         .logo-img__text {
           font-weight: 900;
           font-size: 28px;
           text-transform: uppercase;
+
+          @media (max-width: 640px) {
+            font-size: 24px;
+          }
         }
       }
 
@@ -257,24 +268,28 @@ body {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        width: 210px;
+        max-width: 210px;
 
         .logo-text__title {
           font-weight: 800;
           font-size: 30px;
           line-height: 100%;
           text-transform: uppercase;
+
+          @media (max-width: 640px) {
+            font-size: 25px;
+          }
         }
 
         .logo-text__subtitle {
           font-weight: 400;
           font-size: 17px;
           line-height: 100%;
-        }
-      }
 
-      @media (max-width: 768px) {
-        scale: 0.9;
+          @media (max-width: 640px) {
+            font-size: 15px;
+          }
+        }
       }
     }
 
@@ -293,6 +308,12 @@ body {
       display: flex;
       height: 60px;
       align-items: center;
+      flex-grow: 1;
+      padding-right: 10px;
+
+      @media (max-width: 1280px) {
+        padding: 0px;
+      }
 
       @media (max-width: 768px) {
         display: none;
@@ -302,12 +323,13 @@ body {
         font-family: "Mplus 1p", sans-serif;
         font-weight: 400;
         font-size: 15px;
+        max-width: 350px;
       }
     }
   }
 
   .right {
-    max-width: 642px;
+    // max-width: 50%;
     height: 40px;
 
     @media (max-width: 1024px) {
@@ -457,6 +479,12 @@ body {
     background: none;
   }
 
+  @media (max-width: 768px) {
+    width: 80px;
+    margin-top: 0;
+    background: none;
+  }
+
   .nav-header__list {
     display: flex;
     width: 100%;
@@ -468,6 +496,10 @@ body {
 
     @media (max-width: 1024px) {
       padding: 0px 0px;
+    }
+
+    @media (max-width: 768px) {
+      justify-content: end;
     }
 
     .nav-header__list-item {
@@ -486,6 +518,10 @@ body {
         &.burger-menu {
           display: flex; // Показываем только бургер-меню
         }
+      }
+
+      @media (max-width: 768px) {
+        padding: 20px 0px;
       }
 
       .dropdown-link {
@@ -580,12 +616,12 @@ body {
   .burger-menu {
     cursor: pointer;
     display: none; // По умолчанию скрываем бургер-меню
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
 
     @media (max-width: 1024px) {
       display: flex; // Показываем на планшетах и мобильных устройствах
+      align-items: end;
+      justify-content: center;
+      padding: 10px;
     }
 
     .burger-icon {
@@ -615,13 +651,20 @@ body {
   .burger-modal {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 400px;
-    height: 1284px;
+    right: -150%;
+    max-width: 400px;
+    width: 100%; // Ширина модального окна на маленьких экранах
+    height: auto;
     background-color: var(--main-bg-color);
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     transition: right 0.3s ease;
     z-index: 50;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    @media (max-width: 640px) {
+      height: 100vh;
+    }
 
     &.open {
       right: 0;
@@ -633,7 +676,7 @@ body {
       display: flex;
       align-items: end;
       justify-content: flex-end;
-      padding: 0 30px;
+      padding: 0 20px; // Уменьшаем отступы для маленьких экранов
     }
 
     .burger-close {
@@ -655,17 +698,22 @@ body {
     }
 
     .burger-modal-content {
+      width: 100%; // Убедимся, что контент занимает всю ширину
+
       .burger-menu-list {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding: 0px;
+        padding: 0;
         gap: 30px;
         margin: 50px 0;
+
         .burger-menu-item {
           width: 100%;
           height: 34px;
-          margin-left: 50px;
+          margin-left: 0; // Убираем фиксированный отступ слева
+          padding-left: 20px; // Добавляем отступ для текста
+
           a {
             display: flex;
             font-family: "Mplus 1p";
@@ -687,11 +735,11 @@ body {
       .burger-footer {
         width: 100%;
         background-color: var(--secondary-bg-color);
+        padding: 20px; // Добавляем отступы для футера
 
         .burder-wrapper {
           display: flex;
-          width: 75%;
-          height: 750px;
+          width: 100%; // Занимаем всю ширину
           margin: 0 auto;
           flex-direction: column;
           gap: 30px;
@@ -725,6 +773,7 @@ body {
               width: 20px;
               height: 20px;
             }
+
             p {
               font-family: "Mplus 1p";
               font-style: normal;
@@ -738,14 +787,16 @@ body {
             width: 100%;
             height: 48px;
             border-radius: 5px;
+
             .button {
-              @include base_button(420px, var(--main-text-color), var(--secondary-color));
+              @include base_button(100%, var(--main-text-color), var(--secondary-color)); // Ширина кнопки 100%
             }
           }
 
           .burder-social {
             display: flex;
             justify-content: space-between;
+
             .socials__link {
               display: flex;
               align-items: center;
@@ -767,8 +818,10 @@ body {
 
               .icon-wt-color {
                 color: #25d366;
+
                 &:hover {
                   background-color: #25d366;
+
                   svg path {
                     fill: var(--main-text-color);
                   }
@@ -777,8 +830,10 @@ body {
 
               .icon-tg-color {
                 color: #24a1de;
+
                 &:hover {
                   background-color: #24a1de;
+
                   svg path {
                     fill: var(--main-text-color);
                   }
@@ -787,8 +842,10 @@ body {
 
               .icon-vk-color {
                 color: #4c75a3;
+
                 &:hover {
                   background-color: #4c75a3;
+
                   svg path {
                     fill: var(--main-text-color);
                   }
@@ -797,8 +854,10 @@ body {
 
               .icon-od-color {
                 color: #ff9800;
+
                 &:hover {
                   background-color: #ff9800;
+
                   svg path {
                     fill: var(--main-text-color);
                   }
@@ -2821,7 +2880,7 @@ body {
   display: none;
   position: fixed;
   top: 0;
-  right: -100%;
+  right: -150%;
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.5);
@@ -2845,7 +2904,7 @@ body {
   top: 0;
   right: 0;
   max-width: 500px;
-  min-height: 1284px;
+  height: 1284px;
   background: var(--main-bg-color);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
@@ -2871,7 +2930,7 @@ body {
   }
 
   h2 {
-    width: 400px;
+    max-width: 400px;
     height: 47px;
 
     font-family: "Raleway";
