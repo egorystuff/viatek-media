@@ -1550,15 +1550,16 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
     gap: 30px;
+    background: none;
   }
   .services__block .services__block-item.base .services__block-item-text .services__block-item-text-number {
     font-family: "Raleway";
     font-style: normal;
     font-weight: 700;
     font-size: 50px;
-    line-height: 50%;
+    line-height: 50px;
     z-index: 10;
   }
   .services__block .services__block-item.base .services__block-item-text .services__block-item-text-title {
@@ -1566,7 +1567,7 @@ body {
     font-style: normal;
     font-weight: 400;
     font-size: 25px;
-    line-height: 37px;
+    line-height: 40px;
     z-index: 10;
   }
   .services__block .services__block-item.base:before {
@@ -1708,9 +1709,9 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 30px;
+    padding: 10px 20px 20px 20px;
     gap: 30px;
-    background: linear-gradient(180deg, rgba(11, 27, 35, 0) 0%, rgba(11, 27, 35, 0.74) 69.59%);
+    background: none;
   }
   .services__block .services__block-item.second .services__block-item-text .services__block-item-text-number {
     font-family: "Raleway";
@@ -3272,9 +3273,10 @@ body {
   margin-top: 20px;
 }
 .reviewsSwiper .swiper-slide .reviews_item {
-  gap: 30px;
-  width: 100%;
-  height: 441px;
+  display: flex;
+  flex-direction: column;
+  max-width: 322px;
+  height: 100%;
   margin-bottom: 20px;
 }
 .reviewsSwiper .swiper-slide .reviews_item-grade {
@@ -3297,7 +3299,7 @@ body {
   color: #7095aa;
 }
 .reviewsSwiper .swiper-slide .reviews_item-text {
-  height: 240px;
+  height: 100%;
   margin-top: 30px;
 }
 .reviewsSwiper .swiper-slide .reviews_item-text p {
@@ -4219,12 +4221,30 @@ body {
     font-size: 18px;
   }
 }
+.contacts__page .contacts__info .contacts__info-item .contacts__info-text .contacts__mail {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-text .contacts__mail:hover {
+  color: var(--secondary-color);
+}
 .contacts__page .contacts__info .contacts__info-item .contacts__info-phones p {
   font-family: "Mplus 1p";
   font-style: normal;
   font-weight: 400;
   font-size: 60px;
   line-height: 150%;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-phones p a {
+  color: inherit;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+.contacts__page .contacts__info .contacts__info-item .contacts__info-phones p a:hover {
+  color: var(--secondary-color);
 }
 @media (max-width: 1280px) {
   .contacts__page .contacts__info .contacts__info-item .contacts__info-phones p {

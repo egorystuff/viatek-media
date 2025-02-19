@@ -1,3 +1,5 @@
+// CUSTOM SWIPERS
+
 let swiperInstance = null;
 let currentSlideIndex = 0;
 
@@ -6,7 +8,7 @@ let currentSlideIndex = 0;
  * @param {string} containerClass - Class name of the swiper container
  * @param {string} blockClass - Class name of the block that will be replaced with the swiper
  */
-function initCustomSwiper(containerClass, blockClass) {
+function initCustomSwiper(containerClass, blockClass, slides = 1) {
   const block = document.querySelector(`.${blockClass}`);
   const isMobile = window.innerWidth <= 1024;
 
@@ -33,8 +35,9 @@ function initCustomSwiper(containerClass, blockClass) {
     block.replaceWith(swiperContainer);
 
     new Swiper(`.${containerClass}`, {
-      slidesPerView: 1,
-      spaceBetween: 30,
+      slidesPerView: slides,
+      spaceBetween: 20,
+      centeredSlides: true,
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
@@ -61,6 +64,9 @@ function initCustomSwiper(containerClass, blockClass) {
   }
 }
 
+//------------------------------------------------------------------------------------------------------
+// MAIN SWIPER
+
 function initMainSwiper() {
   const swiperElement = document.querySelector(".mySwiper");
   if (!swiperElement) {
@@ -76,6 +82,7 @@ function initMainSwiper() {
 
   swiperInstance = new Swiper(".mySwiper", {
     slidesPerView: 1,
+
     pagination: {
       el: ".swiper-pagination",
       type: isMobile ? "bullets" : "fraction",
@@ -98,11 +105,14 @@ function destroySwipers() {
   });
 }
 
+//------------------------------------------------------------------------------------------------------
+// initialize swipers
+
 function initSwipers() {
   destroySwipers();
   initMainSwiper();
   initCustomSwiper("portfolioSwiper", "portfolio__block");
-  initCustomSwiper("promoSwiper", "promo__block");
+  initCustomSwiper("promoSwiper", "promo__block", 1.2);
   initCustomSwiper("reviewsSwiper", "reviews");
 }
 
